@@ -20,6 +20,7 @@ class FireBase {
         // To retrieve tables i.e Users, homes, user list based on authUser
         // All of these is stored in the database.
         // this uses Firebase realtime database to keep track of user entities
+        // This was changed from app.database to shift to cloud Firestore from firebase realtime database
         this.db = app.firestore();
 
         this.googleProvider = new app.auth.GoogleAuthProvider();
