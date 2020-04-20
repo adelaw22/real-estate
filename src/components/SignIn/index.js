@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, {useState } from "react";
 import { withFireBase } from "../Firebase";
 import { 
     Container, 
@@ -6,7 +6,6 @@ import {
     Grid,
     Button, 
     Header, 
-    Icon,
     Divider ,
     Message
 } from 'semantic-ui-react';
