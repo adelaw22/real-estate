@@ -51,7 +51,9 @@ class SignUpForm extends Component {
             email,
             passwordOne,
             passwordTwo,
+            // eslint-disable-next-line
             error
+            
         } = this.state
 
 

@@ -1,12 +1,6 @@
-import React from "react";
-import { Container } from "semantic-ui-react";
+import React from 'react';
+//import { Container } from 'semantic-ui-react';
+import './home.css';
 
-const HomePage = () => (
-    <Container>
-        <h2>
-            Home place
-        </h2>
-    </Container>
-);
-
+const HomePage = () => <div className=''></div>;
 export default HomePage;
