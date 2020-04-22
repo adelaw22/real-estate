@@ -10,6 +10,7 @@ import {
 import {AuthUserContext} from "../Session";
 
 import "./Navigation.scss";
+import queryString from "query-string";
 
 import SignOutButton from "../SignOut";
 import * as ROLES from "../../constants/roles";
@@ -47,7 +48,7 @@ const Navigation = props => {
 }
 
 const AuthNavigation = ({ authUser, activeItem, handleItemClick, clickHandler }) => (
-        <Menu>
+        <Menu className="menu-container">
                 <Responsive 
                     {...Responsive.onlyMobile}
                 >    
@@ -107,7 +108,7 @@ const NoAuthNavigation = ({ activeItem, handleItemClick, clickHandler }) => {
         const showSidebar = () => { console.log("yes");
          clickHandler(true)};
         
-        return (    <Menu >
+        return (    <Menu className="menu-container">
                 <Responsive 
                     maxWidth={768}
                 >    
@@ -129,16 +130,46 @@ const NoAuthNavigation = ({ activeItem, handleItemClick, clickHandler }) => {
                             to={ROUTES.LANDING}
                         />
                     </Menu.Menu>
+                    <Responsive minWidth={768}>
+
+                    <Menu.Menu position="left" className="menu-items">
+                            <Menu.Item
+                                name="Pricing"
+                                as={Link}
+                                to={ROUTES.PRICING}
+                            />
+
+                            <Menu.Item
+                                name="Buy"
+                                as={Link}
+                                to={ROUTES.BUY}
+                            />
+
+                            <Menu.Item
+                                name="Rent"
+                                as={Link}
+                                to={ROUTES.RENT}
+                            />
+
+                            <Menu.Item
+                                name="Sell"
+                                as={Link}
+                                to={ROUTES.PRICING}
+                            />
+                    </Menu.Menu>
+                    </Responsive>
+
                     <Responsive
                         minWidth={768}
                     >
-                        <Menu.Menu position='right'>
+
+                        <Menu.Menu className="menu-items" position='right'>
                          <Menu.Item
-                              name='Home'
-                              active={activeItem === 'Home'}
-                                 onClick={handleItemClick}
+                              name='Log In'
+                              active={activeItem === 'Log In'}
+                            onClick={handleItemClick}
                              as={Link}
-                             to={ROUTES.HOME}
+                             to={ROUTES.SIGN_IN}
                         />
                         <Menu.Item
                            name='Sign Up'

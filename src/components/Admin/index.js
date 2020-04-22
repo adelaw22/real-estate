@@ -1,17 +1,19 @@
 import React from "react";
 import { withAuthorization } from "../Session";
-import * as ROLES from "../../constants/roles";
-import { withRouter } from "react-router-dom";
-import { compose } from "recompose";
-import { withFireBase } from "../Firebase";
+// import * as ROLES from "../../constants/roles";
+import { Container } from "semantic-ui-react";
 
-const AdminPage = () => (
-    <div>
+const AdminPage = props => {
+   console.log("props", props)
+    return ( 
+   <Container>
         <h2>Admin Page</h2>
-    </div>
-);
+    </Container>
+    )
+};
 // Allows only the admin to access this site
-const AuthAdmin = authUser => authUser && authUser.roles[ROLES.ADMIN];
+const condition = authUser => !!authUser
 
-export default compose(withRouter, withAuthorization(AuthAdmin), withFireBase)(AdminPage);
+// export default compose(withRouter, withFireBase, withAuthorization(AuthAdmin))(AdminPage);
 // export default withRouter(withAuthorization(AuthAdmin)(StartPage));
+export default withAuthorization(condition)(AdminPage)

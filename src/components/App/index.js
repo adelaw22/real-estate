@@ -16,24 +16,23 @@ import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import PasswordChangePage from "../PasswordChange";
+import Pricing from "../Pricing";
 import Error404 from '../Error404';
 
 
 import * as ROUTES from '../../constants/routes';
 import SideBarDrawer from '../Sidebar';
-import { withAuthentication } from "../Session";
-
+import { withAuthentication } from '../Session';
+// import { withAuthentication } from "../Session";
 
 const App = () =>  {
 
         const [sideBarOpen, setsideBarOpen] = useState(false);
 
-        // useEffect(() => {
+        useEffect(() => {
+           console.log("awesomes") 
             
-        //     return () => {
-        //         cleanup
-        //     }
-        // }, [input])
+        }, [])
 
         console.log("sidebar", sideBarOpen)
         
@@ -51,12 +50,14 @@ const App = () =>  {
                         <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} exact/>
                         <Route path={ROUTES.PASSWORD_CHANGE} component={PasswordChangePage} />
 
+                        <Route path={ROUTES.PRICING} component={Pricing} />
+
                         <Route path={ROUTES.HOME} component={HomePage} />
                         <Route path={ROUTES.ACCOUNT} component={AccountPage} exact/>
-                        <Route path={ROUTES.ADMIN} component={AdminPage} exact/>
+                        <Route path={ROUTES.ADMIN} component={props => <AdminPage {...props} />} exact/>
 
                         <Route component={Error404}/>
-                    </Switch>
+                   </Switch>
                 </div>
             </Router>   
     )

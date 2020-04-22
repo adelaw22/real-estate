@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, {  useState } from "react";
 import { withFireBase } from "../Firebase";
 import { 
     Container, 
@@ -6,7 +6,7 @@ import {
     Grid,
     Button, 
     Header, 
-    Icon,
+   
     Divider ,
     Message
 } from 'semantic-ui-react';
@@ -21,14 +21,16 @@ import SignInGoogleBase from "../SignInGoogle";
 
 const SignInPage = () => (
     <Container>
-        <Grid columns={1} centered >
-            <Grid.Column mobile={16} tablet={8} largeScreen={2} computer={6}>
+        <Grid  stretched={true} centered={true} >
+            <Grid.Column mobile="16" computer="6" largeScreen="4" tablet="fourteen" >
                 <Header as='h3' textAlign='center'>
                     Sign In
                 </Header>
 
                 <Divider />
                 <SignInForm/>
+                <SignInGoogleBase/>
+
                 <SignUpLink  login={true}  to={ROUTES.SIGN_UP} name={'Sign Up'}/>
             </Grid.Column>
         </Grid>
@@ -95,7 +97,7 @@ const  SignInFormBase  = props =>  {
                         name="email"
                         onChange={onChange}
                         value={loginDetail.email}
-                        width={8}
+                        
                         ref={
                             register({
                                 required: 'Please enter an email',
@@ -119,7 +121,7 @@ const  SignInFormBase  = props =>  {
                         onChange={onChange}
                         value={loginDetail.password}
                         type="password"
-                        width={8}
+                        
                         placeholder="Password"
                         ref={
                             register({
@@ -132,7 +134,6 @@ const  SignInFormBase  = props =>  {
                 </Form.Field>
                 
                 <Button loading={loading} type="submit" fluid  primary>Sign In</Button>
-                <SignInGoogleBase/>
             </Form>
         </div>
     )

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from  'react-hook-form';
-import { Container, Form, Grid, Button, Header, Divider, Message } from 'semantic-ui-react'
+import { Container, Form, Grid, Button, Header, Divider } from 'semantic-ui-react'
 
 const PasswordChangePage = props => { 
     const [form, setForm] = useState({ passwordOne: "", passwordTwo: "" });
@@ -8,10 +8,10 @@ const PasswordChangePage = props => {
     const [loading, setLoading] = useState(false);
 
     const { register, handleSubmit, errors, watch } = useForm();
-
+    console.log("error", error)
     const submit = values => {
         const { passwordOne } = values;
-
+        setLoading(true)
         props
         .firebase
         .doPasswordUpdate(passwordOne)
@@ -19,7 +19,7 @@ const PasswordChangePage = props => {
 
         })
         .catch(error => {
-
+            setError(error['messages'])
         })
     }
 
@@ -32,8 +32,8 @@ const PasswordChangePage = props => {
 
     return (
         <Container>
-            <Grid columns={1} centered={true}>
-                    <Grid.Column mobile={16} largeScreen={8}>
+            <Grid centered={true}>
+                    <Grid.Column mobile="16" computer="6" largeScreen="4" tablet="6">
                             <Header as="h3" className="text-center">Reset your password</Header>
                             <Divider/>
                             <Form onSubmit={handleSubmit(submit)}>
@@ -53,6 +53,8 @@ const PasswordChangePage = props => {
                                         }
                                         type="password"
                                     />
+
+                                    {errors.message && <small className="danger">{ errors }</small>}
                                 </Form.Field>
                                 <Form.Field>
                                     <label>Confirm password</label>

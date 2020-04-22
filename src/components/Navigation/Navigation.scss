@@ -4,4 +4,46 @@
 
 .menu {
     margin: 0 !important;
+    .item::before {
+        bottom: 0 !important;
+        background-color: transparent !important;
+    }
+}
+
+.ui.menu .item::before {
+    position: absolute;
+    content: '';
+    right: 0;
+    bottom: 0% !important;
+    top: auto;
+}
+
+
+.menu-container {
+    height: 8vh;
+}
+
+.menu-items {
+    height: 100%;
+
+    .active.item {
+        position: relative !important;
+        background: transparent !important;
+
+        &::before {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            right: 0;
+            height: 4px;
+            width: 100%;
+            background-color: blue !important;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            margin-right: auto;
+            
+        }
+    }
+
+    
 }

@@ -4,7 +4,7 @@ import * as ROUTES from "../../constants/routes";
 import { withFireBase } from "../Firebase";
 import { compose } from "recompose"
 import { withRouter } from 'react-router-dom';
-
+import './index.scss';
 
 const SignInGoogleBase = props => {
     const [error, setError] = useState(null);
@@ -35,7 +35,7 @@ const SignInGoogleBase = props => {
         <form onSubmit={submit}>
             <Button type="submit" fluid color="red" className="mt-5"><Icon name="google"/> Sign In with Google </Button>
         
-            { error && <small>{ error.message }</small> }
+            { error && <small className="danger d-flex">{ error.message }</small> }
         </form>
     );
 }

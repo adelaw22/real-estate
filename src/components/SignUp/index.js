@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, {  useState } from "react";
 import { Link, withRouter } from 'react-router-dom';
 import * as ROUTES from "../../constants/routes";
 import * as ROLES from "../../constants/roles";
@@ -7,36 +7,52 @@ import { compose } from 'recompose'
 import "./SignUp.scss";
 import { withFireBase } from "../Firebase";
 import { useForm  } from "react-hook-form";
+
 import { 
     Header,
     Container, 
     Form, 
     Button,
     Divider,
-    Icon,
     Message,
     Grid,
-    Checkbox,
-    Popup,
+    Segment,
+    Image
  } from 'semantic-ui-react';
+ import  SignInGoogle from "../SignInGoogle";
 
 
-const SignUpPage = () => (
+const SignUpPage = props => {
+
+    console.log("history", props)
+     return   (
         <Container>
-            <Grid columns={1} centered>
-                <Grid.Column mobile={16} tablet={8} largeScreen={2} computer={6}>
-
+            <Grid centered columns={2}>
+                
+                <Grid.Column stretched mobile="sixteen" tablet="16" computer="9">
+                    <Segment className="image">
+                        <div className="image__info">
+                            <Header as="h1" textAlign="left">Thank for Signing Up</Header>
+                            <Header as="h4" texAlign="left">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, fugit. Suscipit, rem possimus! Dolor, ad, quis totam officiis laudantium aperiam earum unde facere.
+                            </Header>
+                        </div>
+                    </Segment>
+                </Grid.Column>
+                <Grid.Column className="box" mobile="sixteen" tablet="16" computer="9">
                     <Header as='h3' textAlign='center'>
                         Sign Up
                     </Header>
 
                     <Divider />
                     <SignUpForm/>
+                    <SignInGoogle/>
                     <SignUpLink login={false}  to={ROUTES.SIGN_IN} name={'Sign In'}/>
                 </Grid.Column>
             </Grid>
         </Container>
-);
+     )
+};
 
 
 const SignUpLink = (props) => {
@@ -84,11 +100,10 @@ const FormSign = props => {
     const [error, setError] = useState([]);
     const [loading, setLoading] = useState(false);
     const [role, setRole] = useState('Regular');
-    
-    const [showConfirm, setConfirm] = useState(false);
+
 
     const submit = values => {
-        setConfirm(true);
+        
         const { email, passwordOne, username } = values;
 
         console.log("values", values);
@@ -169,72 +184,7 @@ const FormSign = props => {
                         type="text" />
                     { errors.username && <small className="danger">{ errors.username.message }</small> }
                     </Form.Field>
-                    <Grid className="p-2" columns={1}>
-                        <Grid.Row columns={3}>
-                            <Grid.Column>
-                                <Popup
-                                    content="You will be an agent if you choose this option. You will be able to sell on behalf of other companies"
-                                    header="Agent"
-                                    mouseLeaveDelay={500}
-                                    trigger={
-                                        <Form.Field>
-                                            <Checkbox
-                                                radio
-                                                label='Agent'
-
-                                                value='Agent'
-                                                checked={ role === 'Agent'}
-                                                onChange={() => setRole('Agent')}
-                                            />
-                                        </Form.Field>
-                                    }
-                                />
-                                
-                            </Grid.Column>
-                            
-                            <Grid.Column>
-                                <Popup
-                                    content="You will be able to add, update, sell, showcase your homes and choose agents who will communicate to your potential clients."
-                                    header="Company owner"
-                                    mouseLeaveDelay={500}
-                                    trigger={
-                                        <Form.Field>
-                                            <Checkbox
-                                                radio
-                                                label='Owner'
-                                                value='Owner'
-                                                checked={role === 'Owner'}
-                                                onChange={() => setRole('Owner')}
-                                            />
-                                        </Form.Field>
-                                    }
-                                />
-                                
-                            </Grid.Column>
-                            
-                            <Grid.Column>
-                                <Popup
-                                    mouseLeaveDelay={500}
-                                    content="You will be able to buy, rent and communicate with agents to better help you understand your future home and price of it."
-                                    header="I want to rent and/or buy"
-                                    trigger={
-                                        <Form.Field>
-                                            <Checkbox
-                                                radio
-                                                label='Regular'
-                                                value='Regular'
-                                                checked={role === 'Regular'}
-                                                onChange={() => setRole('Regular')}
-                                            />
-                                        </Form.Field>
-                                    }
-                                />
-                                
-                            </Grid.Column>
-                            
-                        </Grid.Row>
-                    </Grid>
-                    
+        
                     <Form.Field required>
                         <label>Email</label>
                         <input 
@@ -295,7 +245,7 @@ const FormSign = props => {
                     </Form.Field>
 
                 <Button loading={loading} fluid primary role="submit">Sign Up</Button>
-                <Button fluid color="red" className="mt-5"><Icon name="google"/> Sign Up with Google </Button>
+                {/* <Button fluid color="red" className="mt-5"><Icon name="google"/> Sign Up with Google </Button> */}
             </Form>
         </div>
     )

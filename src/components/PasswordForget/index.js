@@ -8,7 +8,7 @@ import {
     Form, 
     Button, 
     Message, 
-    Icon } from 'semantic-ui-react'
+     } from 'semantic-ui-react'
 import "./pwdForget.scss";
 import { useForm  } from "react-hook-form";
 import { withFireBase } from "../Firebase";
@@ -20,9 +20,9 @@ import * as ROUTES from '../../constants/routes';
 const PasswordForgetPage = () => {
     return (
         <Container>
-                <Grid columns={1} centered={true}>
+                <Grid columns={1} stretched={true} centered={true}>
             
-                <Grid.Column mobile={16} computer={8} largeScreen={6}>
+                <Grid.Column mobile="16" largeScreen="5" computer="6" tablet="12">
                     <Header as="h2" className="text-center">
                         Change password request
                     </Header>

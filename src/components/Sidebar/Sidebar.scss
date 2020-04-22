@@ -58,7 +58,7 @@
   /* Individual item */
   .bm-item {
     display: inline-block;
-    padding: 15px 0;
+    padding: 10px 0;
     color: lightblue;
     transition: .25s;
   }
@@ -66,4 +66,9 @@
   /* Styling of overlay */
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
+  }
+
+  .item {
+    display: flex;
+    justify-content: space-between;
   }

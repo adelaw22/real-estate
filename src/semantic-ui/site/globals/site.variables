@@ -9,7 +9,8 @@
 @red              : #D95C5C;
 @teal             : #00B5AD;
 @yellow           : #F2C61F;
-@grey             : #b2afaf
+@grey             : #b2afaf;
+@lime             : #01FF70;
 
 
 @primaryColor: @blue;

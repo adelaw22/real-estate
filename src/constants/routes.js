@@ -2,7 +2,11 @@ export const LANDING = '/';
 export const SIGN_UP = '/signup';
 export const SIGN_IN = '/signin';
 export const HOME = '/home';
+export const BUY = '/home?type=buy';
+export const RENT = '/home?type=rent';
+export const ABOUT = '/about';
 export const ACCOUNT = '/account';
 export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
-export const PASSWORD_CHANGE = '/pw-change'
+export const PASSWORD_CHANGE = '/pw-change';
+export const PRICING = '/pricing';
