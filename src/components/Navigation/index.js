@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+// import { Container, Menu, Icon, Responsive, Button } from 'semantic-ui-react';
 import {
     Container,
     Menu,
@@ -11,10 +12,13 @@ import {AuthUserContext} from "../Session";
 
 import "./Navigation.scss";
 import queryString from "query-string";
-
 import SignOutButton from "../SignOut";
 import * as ROLES from "../../constants/roles";
 import * as ROUTES from "../../constants/routes";
+// import './Navigation.scss';
+
+import * as ROUTES from '../../constants/routes';
+
 
 const Navigation = props => {
 
@@ -187,4 +191,4 @@ const NoAuthNavigation = ({ activeItem, handleItemClick, clickHandler }) => {
         )
 }
 
-export default Navigation
+export default Navigation;

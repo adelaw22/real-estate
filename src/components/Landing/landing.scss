@@ -1,0 +1,155 @@
+.landingPage {
+  width: 100%;
+  height: auto;
+
+  .firstSec {
+    background: url('../images/bg1.png');
+    width: 100%;
+    height: auto;
+    padding-bottom: 6em;
+    .ui.container {
+      .Section-content {
+        width: 40%;
+        padding-top: 10em;
+        .ui.header {
+          font-size: 3.5em;
+        }
+        p {
+          font-size: 1.25em;
+          color: white;
+        }
+        .ui.button {
+          background: white;
+          color: #1149b6;
+          font-size: 1em;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .secondSec {
+    width: 100%;
+    height: auto;
+    padding-top: 2em;
+    padding-bottom: 4em;
+    .ui.grid {
+      height: auto;
+      margin-top: 3.75em;
+      margin-bottom: 2.5em;
+      .inner-column {
+        color: #1149b6;
+        margin: 1.25em auto;
+        width: 50%;
+      }
+    }
+  }
+
+  .thirdSec {
+    background: #f8f8f8;
+    height: auto;
+    .ui.container {
+      height: auto;
+      .ui.header {
+        width: 40%;
+        padding-top: 48px;
+        margin: 0px auto;
+        font-size: 22px;
+        font-weight: 600;
+        color: #1149b6;
+      }
+      .ui.divider {
+        width: 10%;
+        margin: 2rem auto;
+        border-top: 1px solid #1149b6;
+        border-bottom: 1px solid #1149b6;
+      }
+
+      .ui.grid {
+        padding-top: 50px;
+        padding-bottom: 5.25em;
+        .ui.images {
+        }
+        .ui.header {
+          font-size: 19px;
+          margin-left: 0px;
+        }
+      }
+    }
+
+    .second-layer {
+      background: url('../images/section.png');
+      width: 100%;
+      height: auto;
+      padding-top: 8em;
+      padding-left: 3.125em;
+      padding-bottom: 6em;
+      .card-layer {
+        height: auto;
+        width: 50%;
+        background: #ffffff;
+        padding: 50px 40px;
+        .text-layer {
+          width: 55%;
+          height: auto;
+
+          .ui.header {
+            color: #1149b6;
+            font-size: 24px;
+            margin-top: 0px;
+          }
+        }
+      }
+    }
+
+    .companies {
+      height: auto;
+      padding-top: 3.75em;
+      padding-bottom: 3.5em;
+      .ui.header {
+        text-align: center;
+        margin-bottom: 1.25em;
+      }
+      .ui.image {
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .Section4 {
+    width: 100%;
+    height: 31.25em;
+    text-align: center;
+    padding-top: 12rem;
+  }
+
+  .free-trial {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background: #1149b6;
+    color: #ffffff;
+    padding-top: 3em;
+    padding-bottom: 5em;
+    .ui.header {
+      width: 40%;
+      font-size: 3em;
+      color: #ffffff;
+      margin: auto;
+    }
+    p {
+      font-size: 1.25em;
+      padding-top: 5em;
+      padding-bottom: 2em;
+      width: 40%;
+      margin: auto;
+    }
+    .ui.button {
+      background: white;
+      color: #1149b6;
+      font-size: 1.25em;
+      font-weight: 700;
+    }
+  }
+}

@@ -97,10 +97,28 @@ const FormSign = props => {
         passwordTwo: '' 
     });
 
+<<<<<<< HEAD
+    render() {
+        const {
+            username,
+            email,
+            passwordOne,
+            passwordTwo,
+            // eslint-disable-next-line
+            error
+            
+        } = this.state
+=======
     const [error, setError] = useState([]);
     const [loading, setLoading] = useState(false);
     const [role, setRole] = useState('Regular');
+<<<<<<< HEAD
 
+=======
+    
+    const [showConfirm, setConfirm] = useState(false);
+>>>>>>> 05cc7a5c886950f8cd023c43794cae89ecafea88
+>>>>>>> 7ba8f1155bf7f8a44f5f1ddb557419eeead0c039
 
     const submit = values => {
         
