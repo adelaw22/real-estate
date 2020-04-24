@@ -44,7 +44,7 @@ const SignUpPage = props => {
             }>
                 <Grid.Column stretched mobile="sixteen"
                     tablet="16"
-                    computer="9">
+                    computer="5">
                     <Segment className="image">
                         <div className="image__info">
                             <Header as="h1"
@@ -62,7 +62,7 @@ const SignUpPage = props => {
                     className="box"
                     mobile="sixteen"
                     tablet="16"
-                    computer="9">
+                    computer="11">
                     <Header as='h3'
                         textAlign='center'>
                         Sign Up </Header>
@@ -135,7 +135,7 @@ const FormSign = props => {
 
     const [error, setError] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [role, setRole] = useState('Regular');
+    const [role, setRole] = useState('client');
 
 
     const submit = values => {
