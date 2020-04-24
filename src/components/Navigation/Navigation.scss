@@ -4,7 +4,7 @@
 
 .ui.menu {
   margin: 0;
-  height: auto !important;
+ 
 
   .active.item {
     background-color: white;
@@ -37,7 +37,7 @@
 
 
 .menu-container {
-  height: 8vh;
+  height: 8vh !important;
 }
 
 .menu-items {

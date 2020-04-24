@@ -48,8 +48,8 @@ const SignUpPage = props => {
                     <Segment className="image">
                         <div className="image__info">
                             <Header as="h1"
-                                textAlign="left"> Thank
-                        for Signing Up </Header>
+                                textAlign="left"> Thank you
+                                for Signing Up </Header>
                             <Header as="h4"
                                 texAlign="left">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit.Accusamus,
