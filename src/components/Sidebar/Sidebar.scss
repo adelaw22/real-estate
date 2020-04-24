@@ -72,3 +72,13 @@
     display: flex;
     justify-content: space-between;
   }
+
+  .menu-item, .menu-item:active  {
+    outline: none;
+  }
+
+  .menu-item:focus, .menu-item:hover {
+    background-color: #0a16709c;
+  }
+
+  

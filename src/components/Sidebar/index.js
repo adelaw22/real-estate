@@ -24,7 +24,7 @@ const SideBarDrawer = props => {
                 </div>
             </Link>
             <Link id="homes" className="menu-item" to={ROUTES.HOME}>
-            <div className="item">
+                <div className="item">
                     <p>Buy Sell Rent</p>
                     <Icon  name="angle right"/>
                 </div>

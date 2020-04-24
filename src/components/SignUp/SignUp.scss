@@ -46,7 +46,8 @@
 
 .image {
     border: none !important;
-    background: url('/resources/images/thumbs.jpg') no-repeat center !important;
+    background: url('/resources/images/thumbs.jpg') center !important;
+    background-repeat: no-repeat !important;
     background-size: cover !important;
     display: flex !important;
     align-items: flex-end;
