@@ -38,51 +38,53 @@ const SignUpPage = props => {
 
     console.log("history", props)
     return (
-        <Container>
-            <Grid centered columns={
-                2
-            }>
-                <Grid.Column stretched mobile="sixteen"
-                    tablet="16"
-                    computer="5">
-                    <Segment className="image">
-                        <div className="image__info">
-                            <Header as="h1"
-                                textAlign="left"> Thank you
-                                for Signing Up </Header>
-                            <Header as="h4"
-                                texAlign="left">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.Accusamus,
-                                fugit.Suscipit, rem possimus!Dolor, ad, quis totam officiis laudantium aperiam earum unde facere.
-                        </Header>
-                        </div>
-                    </Segment>
-                </Grid.Column>
-                <Grid.Column
-                    className="box"
-                    mobile="sixteen"
-                    tablet="16"
-                    computer="11">
-                    <Header as='h3'
-                        textAlign='center'>
-                        Sign Up </Header>
+        <div className="wrapper">
+            <Container>
+                <Grid centered columns={
+                    2
+                }>
+                    <Grid.Column stretched mobile="sixteen"
+                        tablet="16"
+                        computer="5">
+                        <Segment className="image">
+                            <div className="image__info">
+                                <Header as="h1"
+                                > Thank you
+                                    for Signing Up </Header>
+                                <Header as="h4"
+                                >
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.Accusamus,
+                                    fugit.Suscipit, rem possimus!Dolor, ad, quis totam officiis laudantium aperiam earum unde facere.
+                            </Header>
+                            </div>
+                        </Segment>
+                    </Grid.Column>
+                    <Grid.Column
+                        className="box"
+                        mobile="sixteen"
+                        tablet="16"
+                        computer="11">
+                        <Header as='h3'
+                            textAlign='center'>
+                            Sign Up </Header>
 
-                    <Divider />
-                    <SignUpForm />
-                    <SignInGoogle />
-                    <SignUpLink login={
-                        false
-                    }
-                        to={
-                            ROUTES.SIGN_IN
+                        <Divider />
+                        <SignUpForm />
+                        <SignInGoogle />
+                        <SignUpLink login={
+                            false
                         }
-                        name={
-                            'Sign In'
-                        }
-                    />
-                </Grid.Column>
-            </Grid>
-        </Container>
+                            to={
+                                ROUTES.SIGN_IN
+                            }
+                            name={
+                                'Sign In'
+                            }
+                        />
+                    </Grid.Column>
+                </Grid>
+            </Container>
+        </div>
     )
 };
 

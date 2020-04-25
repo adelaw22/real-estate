@@ -1,4 +1,18 @@
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background: url('/resources/svg/bg1.svg') center no-repeat;
 
+    @media  (min-width: 320px) and (max-width: 720px) {
+        background-size: 300%;
+        
+        background-position: 100px 350px;
+    }
+
+    // @media screen and (max-width: 1440px) {
+    //     background-position: cover;
+    // }
+}
 .grid {
     margin-top: 2em !important;
 //     width: 100%;

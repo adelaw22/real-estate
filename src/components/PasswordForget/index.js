@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
-import { 
-    Container, 
-    Grid, 
-    Header, 
-    Divider, 
-    Form, 
-    Button, 
-    Message, 
-     } from 'semantic-ui-react'
+import {
+    Container,
+    Grid,
+    Header,
+    Divider,
+    Form,
+    Button,
+    Message,
+} from 'semantic-ui-react'
 import "./pwdForget.scss";
-import { useForm  } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { withFireBase } from "../Firebase";
 import { Link } from "react-router-dom";
 import * as ROUTES from '../../constants/routes';
@@ -19,32 +19,34 @@ import * as ROUTES from '../../constants/routes';
 
 const PasswordForgetPage = () => {
     return (
-        <Container>
+        <div className="wrapper-bg2">
+            <Container>
                 <Grid columns={1} stretched={true} centered={true}>
-            
-                <Grid.Column mobile="16" largeScreen="5" computer="6" tablet="12">
-                    <Header as="h2" className="text-center">
-                        Change password request
-                    </Header>
-                    <Divider/>
 
-                    <PasswordForgetForm/>
-                    <LoginLink/>
-                </Grid.Column>
-            </Grid> 
-        </Container>
+                    <Grid.Column mobile="16" largeScreen="5" computer="6" tablet="12">
+                        <Header as="h2" className="text-center">
+                            Change password request
+                        </Header>
+                        <Divider />
+
+                        <PasswordForgetForm />
+                        <LoginLink />
+                    </Grid.Column>
+                </Grid>
+            </Container>
+        </div>
     )
 }
 
 const PasswordForget = props => {
-        const { handleSubmit, register, errors } = useForm();
+    const { handleSubmit, register, errors } = useForm();
 
-        const [email, setEmail] = useState('');
-        const [error, setError] = useState([])
+    const [email, setEmail] = useState('');
+    const [error, setError] = useState([])
 
-        const Submit = value => {
-           
-            props.firebase.doPasswordReset(value.email)
+    const Submit = value => {
+
+        props.firebase.doPasswordReset(value.email)
             .then(res => {
 
                 setError('');
@@ -55,28 +57,28 @@ const PasswordForget = props => {
                 setError(error['message'])
                 setEmail('');
             })
-        }
+    }
 
-        const onChange = event => {
-            setEmail(event.target.value)
-        }
-       
-        return (   
-            <div>
-                { error.length > 0 ?  <Message
-                    error
-                    header='Sorry process failed'
-                    content={error}
-                /> : ''}
-                <Form onSubmit={handleSubmit(Submit)}>
-                    
-                    <Form.Field required>
-                        <label>Email</label>
-                        <input 
-                        onChange={onChange} 
-                        value={email} 
-                        name="email" 
-                        type="email" 
+    const onChange = event => {
+        setEmail(event.target.value)
+    }
+
+    return (
+        <div>
+            {error.length > 0 ? <Message
+                error
+                header='Sorry process failed'
+                content={error}
+            /> : ''}
+            <Form onSubmit={handleSubmit(Submit)}>
+
+                <Form.Field required>
+                    <label>Email</label>
+                    <input
+                        onChange={onChange}
+                        value={email}
+                        name="email"
+                        type="email"
                         placeholder="Enter your email"
                         ref={
                             register({
@@ -87,16 +89,16 @@ const PasswordForget = props => {
                                 }
                             })
                         }
-                        />
-                        { errors.email && <small className="danger">{ errors.email.message }</small> }
-                    </Form.Field>
-                    <Button fluid role="submit" primary>Send</Button>
-                </Form>
-            </div>
-        )
+                    />
+                    {errors.email && <small className="danger">{errors.email.message}</small>}
+                </Form.Field>
+                <Button fluid role="submit" primary>Send</Button>
+            </Form>
+        </div>
+    )
 }
 
-const LoginLink = () =>  (
+const LoginLink = () => (
     <div className="text-center">
         <p>Go back to <Link to={ROUTES.SIGN_IN}>Login</Link></p>
     </div>

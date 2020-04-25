@@ -1,13 +1,13 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { withFireBase } from "../Firebase";
-import { 
-    Container, 
-    Form, 
+import {
+    Container,
+    Form,
     Grid,
-    Button, 
-    Header, 
-   
-    Divider ,
+    Button,
+    Header,
+
+    Divider,
     Message
 } from 'semantic-ui-react';
 import { withRouter } from "react-router-dom";
@@ -20,22 +20,24 @@ import SignInGoogleBase from "../SignInGoogle";
 
 
 const SignInPage = () => (
-    <Container>
-        <Grid  stretched={true} centered={true} >
-            <Grid.Column mobile="16" computer="6" largeScreen="4" tablet="fourteen" >
-                <Header as='h3' textAlign='center'>
-                    Sign In
-                </Header>
+    <div className="wrapper">
+        <Container>
+            <Grid stretched={true} centered={true} >
+                <Grid.Column mobile="16" computer="6" largeScreen="4" tablet="fourteen" >
+                    <Header as='h3' textAlign='center'>
+                        Sign In
+                    </Header>
 
-                <Divider />
-                <SignInForm/>
-                <SignInGoogleBase/>
+                    <Divider />
+                    <SignInForm />
+                    <SignInGoogleBase />
 
-                <SignUpLink  login={true}  to={ROUTES.SIGN_UP} name={'Sign Up'}/>
-            </Grid.Column>
-        </Grid>
-    </Container>
-                
+                    <SignUpLink login={true} to={ROUTES.SIGN_UP} name={'Sign Up'} />
+                </Grid.Column>
+            </Grid>
+        </Container>
+    </div>
+
 )
 
 
@@ -45,7 +47,7 @@ const SignInPage = () => (
 //     error: null,
 // };
 
-const  SignInFormBase  = props =>  {
+const SignInFormBase = props => {
     const { handleSubmit, register, errors } = useForm();
 
     const [loginDetail, setLoginDetail] = useState({ email: '', password: '' })
@@ -57,19 +59,19 @@ const  SignInFormBase  = props =>  {
         console.log("values", values);
         const { email, password } = values;
         props
-        .firebase
-        .doSignInUserWithEmailAndPassword(email, password)
-        .then(response => {
-            console.log("response si", response);
-            setLoading(false);
-            setLoginDetail({ email: '', password: '' });
-            props.history.push(ROUTES.ACCOUNT)
-        })
-        .catch(error => {
-            setLoading(false);
-            setError(error['message'])
-            setLoginDetail({ email: '', password: ''})
-        })
+            .firebase
+            .doSignInUserWithEmailAndPassword(email, password)
+            .then(response => {
+                console.log("response si", response);
+                setLoading(false);
+                setLoginDetail({ email: '', password: '' });
+                props.history.push(ROUTES.ACCOUNT)
+            })
+            .catch(error => {
+                setLoading(false);
+                setError(error['message'])
+                setLoginDetail({ email: '', password: '' })
+            })
 
         // e.preventDefault();
     }
@@ -83,12 +85,12 @@ const  SignInFormBase  = props =>  {
 
     return (
         <div>
-            { error.length > 0 ?  <Message
+            {error.length > 0 ? <Message
                 error
                 header='Sorry Login failed'
                 content={error}
             /> : ''}
-            <Form  onSubmit={handleSubmit(onSubmit)}>
+            <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Field
                     required
                 >
@@ -97,7 +99,7 @@ const  SignInFormBase  = props =>  {
                         name="email"
                         onChange={onChange}
                         value={loginDetail.email}
-                        
+
                         ref={
                             register({
                                 required: 'Please enter an email',
@@ -110,7 +112,7 @@ const  SignInFormBase  = props =>  {
                         type="email"
                         placeholder="Email"
                     />
-                    { errors.email && <small className="text-danger">{ errors.email.message }</small> }
+                    {errors.email && <small className="text-danger">{errors.email.message}</small>}
                 </Form.Field>
                 <Form.Field
                     required
@@ -121,7 +123,7 @@ const  SignInFormBase  = props =>  {
                         onChange={onChange}
                         value={loginDetail.password}
                         type="password"
-                        
+
                         placeholder="Password"
                         ref={
                             register({
@@ -130,10 +132,10 @@ const  SignInFormBase  = props =>  {
                             })
                         }
                     />
-                    { errors.password && <small className="text-danger">{ errors.password.message }</small> }
+                    {errors.password && <small className="text-danger">{errors.password.message}</small>}
                 </Form.Field>
-                
-                <Button loading={loading} type="submit" fluid  primary>Sign In</Button>
+
+                <Button loading={loading} type="submit" fluid primary>Sign In</Button>
             </Form>
         </div>
     )
