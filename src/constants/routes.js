@@ -6,6 +6,7 @@ export const BUY = '/home?type=buy';
 export const RENT = '/home?type=rent';
 export const ABOUT = '/about';
 export const ACCOUNT = '/account';
+export const PROFILE = '/profile/:type';
 export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
 export const PASSWORD_CHANGE = '/pw-change';

@@ -5,8 +5,8 @@ const index = () => {
     return (
         <div>
 
-            <Header as="h3">
-                Card Details
+            <Header as='h3'>
+                Company details
                 </Header>
 
         </div>
