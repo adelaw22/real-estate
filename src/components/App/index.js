@@ -5,6 +5,7 @@ import {
     Switch
 } from 'react-router-dom'
 import Navigation from "../Navigation";
+import { Transition } from 'semantic-ui-react'
 
 
 
@@ -45,6 +46,7 @@ const App = () => {
             <Navigation click={setsideBarOpen} />
             <div id="page-wrap" style={{ height: 100 + "vh", overflow: 'auto' }}>
                 <Switch>
+
                     <Route exact path={ROUTES.LANDING} component={LandingPage} />
                     <Route path={ROUTES.SIGN_UP} component={SignUpPage} exact />
                     <Route path={ROUTES.SIGN_IN} component={SignInPage} exact />
@@ -59,6 +61,7 @@ const App = () => {
                     <Route path={ROUTES.ADMIN} component={props => <AdminPage {...props} />} exact />
 
                     <Route component={Error404} />
+
                 </Switch>
             </div>
         </Router>

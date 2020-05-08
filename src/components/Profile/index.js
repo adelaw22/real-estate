@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { withRouter } from "react-router-dom";
 import PDetails from './PersonnalDetails';
-import PackageChoice from './PackageChoice';
-import ProfilePhoto from './ProfilePhoto';
+import ProfilePhoto from './ProfilePhoto'
+import CardDetails from './CardDetails';
 
 
 import './profile.scss';
@@ -50,7 +50,7 @@ const Profile = props => {
                 onChange={handleChange}
             />
         case 1:
-            return <PackageChoice
+            return <ProfilePhoto
                 nextStep={nextStep}
                 prevStep={previousStep}
                 onChange={handleChange}
@@ -58,7 +58,7 @@ const Profile = props => {
             />
 
         case 2:
-            return <ProfilePhoto
+            return <CardDetails
                 nextStep={nextStep}
                 prevStep={previousStep}
                 onChange={handleChange}
