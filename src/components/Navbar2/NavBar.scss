@@ -1,0 +1,17 @@
+.centered-icon {
+    padding: 0.75em;
+}
+
+.ui.menu {
+    margin: 0;
+
+    .active.item {
+        background-color: white;
+    }
+
+    .item {
+        &::before {
+            width: 0;
+        }
+    }
+}

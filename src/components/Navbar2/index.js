@@ -1,23 +1,30 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+//Navbar for the home page and contact page.
+
+
+import React, {useState} from 'react';
+import './NavBar.scss'
 import {
-    Container,
-    Menu,
-    Icon,
-    Responsive,
-    Button,
-    Image
+      Container,
+      Menu,
+      Icon,
+      Responsive,
+      Button,
+      Image,
+      Input
 } from 'semantic-ui-react';
-import {AuthUserContext} from "../Session";
-
-import './Navigation.scss';
-
-import SignOutButton from "../SignOut";
+import {
+    AuthUserContext
+} from "../Session";
 import * as ROLES from "../../constants/roles";
 import * as ROUTES from "../../constants/routes";
-import homelogo from  '../images/home-run (1).png'
+import homelogo from '../images/home-run (1).png';
+import {
+    Link
+} from 'react-router-dom';
+import SignOutButton from "../SignOut";
 
-const Navigation = props => {
+
+const NavBar = props => {
 
     const [activeItem, setactiveItem] = useState('home')
 
@@ -140,34 +147,33 @@ const NoAuthNavigation = ({ activeItem, handleItemClick, clickHandler }) => {
                     <Responsive  minWidth={768} >
                         <Menu.Menu position='right'>
                          <Menu.Item
-                              name='Pricing'
-                              active={activeItem === 'Pricing'}
+                              name='Buy'
+                              active={activeItem === 'Buy'}
                               onClick={handleItemClick}
                           />
                           <Menu.Item
-                             name='Agent'
-                              active={activeItem === 'Agent'}
+                             name='Sell'
+                              active={activeItem === 'Sell'}
                               onClick={handleItemClick}
                              />
                          <Menu.Item
-                             name='Contact Us'
-                              active={activeItem === 'Contact'}
+                             name='Rent'
+                              active={activeItem === 'Rent'}
                               onClick={handleItemClick}
                               as={Link}
-                              to={ROUTES.CONTACT}
+                              
                           />
-                          <Menu.Item
-                             name='Help'
-                              active={activeItem === 'Help'}
-                             onClick={handleItemClick}
-                           />
-                          <Menu.Item name='Sign Up'
-                             active={activeItem === 'Sign Up'}
+                          <Menu.Item>
+                              <Input Icon='search' placeholder='Search'/>
+                          </Menu.Item>
+                         
+                          <Menu.Item name='Add Listing'
+                             active={activeItem === ''}
                              onClick={handleItemClick}
                              as={Link}
-                             to={ROUTES.SIGN_UP}>
+                             >
             
-                             <Button primary>Sign up</Button>
+                             <Button primary>Add Listing</Button>
                           </Menu.Item>
                           </Menu.Menu>
                        
@@ -178,4 +184,4 @@ const NoAuthNavigation = ({ activeItem, handleItemClick, clickHandler }) => {
         )
 }
 
-export default Navigation;
+export default NavBar;

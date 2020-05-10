@@ -2,11 +2,16 @@
   "name": "demevest",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "css-loader": "^3.5.3",
+    "express": "^4.17.1",
     "firebase": "^7.14.0",
+    "less": "^3.11.1",
+    "less-loader": "^6.0.0",
     "node-sass": "^4.13.1",
     "query-string": "^6.12.1",
     "react": "^16.13.1",
@@ -17,8 +22,10 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "recompose": "^0.30.0",
+    "sass-mq": "^5.0.1",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.88.2"
+    "semantic-ui-react": "^0.88.2",
+    "style-loader": "^1.2.1"
   },
   "scripts": {
     "start": "craco start",

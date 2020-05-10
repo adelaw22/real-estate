@@ -58,7 +58,7 @@
   /* Individual item */
   .bm-item {
     display: inline-block;
-    padding: 10px 0;
+    padding: 15px 0;
     color: lightblue;
     transition: .25s;
   }
@@ -67,18 +67,3 @@
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
   }
-
-  .item {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .menu-item, .menu-item:active  {
-    outline: none;
-  }
-
-  .menu-item:focus, .menu-item:hover {
-    background-color: #0a16709c;
-  }
-
-  

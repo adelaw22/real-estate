@@ -20,7 +20,7 @@ const withAuthentication = Component => {
         
     
 
-        componentWillUnmount() {
+        componentWillMount() {
             
             if(typeof this.listener === "function"){
                 this.listener();
@@ -28,7 +28,7 @@ const withAuthentication = Component => {
         }
 
 
-        render() {
+        render () {
             return (
                 <AuthUserContext.Provider value={this.state.authUser}>
                     <Component  { ...this.props }/>

@@ -1,0 +1,117 @@
+@import "~sass-mq";
+
+$mq-breakpoints: (mobile: 320px,
+    tablet: 768px,
+    desktop: 980px,
+    wide: 1300px,
+    // Tweakpoints
+    desktopAd: 810px,
+    mobileLandscape: 480px);
+
+.ContactSec {
+    height: auto;
+
+
+    .top-section {
+        background: url("../images/Group\ 281.png");
+        background-repeat: no-repeat;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        padding-top: 12em;
+        padding-bottom: 13em;
+
+        .ui.header {
+            color: #ffffff;
+            font-size: 2.75em;
+        }
+
+        p {
+            color: #ffffff;
+            font-size: 18px;
+        }
+    }
+
+    .FormSec {
+        width: 100%;
+        height: auto;
+        background: #f8f8f8;
+        padding-bottom: 5.5em;
+
+        .ui.container {
+            padding-top: 3em;
+
+            .ui.header {
+                font-size: 24px;
+                color: #1149b6;
+            }
+
+            .formAddress {
+                width: 100%;
+                display: flex;
+                padding-top: 3em;
+
+
+                .ui.form {
+                    width: 50%;
+
+                }
+
+
+                .AddressInText {
+                    width: 40%;
+                    padding-left: 7em;
+
+                    .phead {
+                        font-weight: 700;
+                    }
+
+                    p {
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mq($from: mobile, $until: tablet) {
+        .top-section {
+            padding-top: 8em;
+            padding-bottom: 8em;
+
+            .ui.header {
+                font-size: 2.125em;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .FormSec {
+            .ui.container {
+                padding-top: 2.125em;
+
+                .ui.header {
+                    font-size: 22px;
+                }
+
+                .formAddress {
+                    padding-top: 2.7em;
+                    display: block;
+
+                    .ui.form {
+                        width: 98%;
+                        padding-left: 0.25em;
+                    }
+
+                    .AddressInText {
+                        width: 90%;
+                        padding-left: 0.25em;
+                        padding-top: 0.75em;
+                    }
+                }
+            }
+        }
+    }
+}

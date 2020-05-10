@@ -1,23 +1,37 @@
+@import "~sass-mq";
+
+$mq-breakpoints: (mobile: 320px,
+  tablet: 768px,
+  desktop: 980px,
+  wide: 1300px,
+  // Tweakpoints
+  desktopAd: 810px,
+  mobileLandscape: 480px);
+
 .landingPage {
   width: 100%;
   height: auto;
 
   .firstSec {
-    background: url('../images/bg1.png');
+    background: url("../images/bg1.png");
     width: 100%;
     height: auto;
     padding-bottom: 6em;
+
     .ui.container {
       .Section-content {
         width: 40%;
         padding-top: 10em;
+
         .ui.header {
           font-size: 3.5em;
         }
+
         p {
           font-size: 1.25em;
           color: white;
         }
+
         .ui.button {
           background: white;
           color: #1149b6;
@@ -33,10 +47,13 @@
     height: auto;
     padding-top: 2em;
     padding-bottom: 4em;
+
     .ui.grid {
       height: auto;
       margin-top: 3.75em;
       margin-bottom: 2.5em;
+      display: flex !important;
+
       .inner-column {
         color: #1149b6;
         margin: 1.25em auto;
@@ -48,16 +65,20 @@
   .thirdSec {
     background: #f8f8f8;
     height: auto;
+
     .ui.container {
       height: auto;
-      .ui.header {
+
+      .ui.header.topHeader {
         width: 40%;
         padding-top: 48px;
         margin: 0px auto;
         font-size: 22px;
         font-weight: 600;
         color: #1149b6;
+        text-align: center;
       }
+
       .ui.divider {
         width: 10%;
         margin: 2rem auto;
@@ -68,27 +89,30 @@
       .ui.grid {
         padding-top: 50px;
         padding-bottom: 5.25em;
-        .ui.images {
-        }
+        display: flex !important;
+
         .ui.header {
           font-size: 19px;
           margin-left: 0px;
+          color: #1149b6;
         }
       }
     }
 
     .second-layer {
-      background: url('../images/section.png');
+      background: url("../images/section.png");
       width: 100%;
       height: auto;
       padding-top: 8em;
       padding-left: 3.125em;
       padding-bottom: 6em;
+
       .card-layer {
         height: auto;
         width: 50%;
         background: #ffffff;
         padding: 50px 40px;
+
         .text-layer {
           width: 55%;
           height: auto;
@@ -106,10 +130,13 @@
       height: auto;
       padding-top: 3.75em;
       padding-bottom: 3.5em;
+
       .ui.header {
         text-align: center;
         margin-bottom: 1.25em;
+        font-size: 22px;
       }
+
       .ui.image {
         margin-right: 10px;
         margin-left: 10px;
@@ -119,9 +146,10 @@
 
   .Section4 {
     width: 100%;
-    height: 31.25em;
+    height: auto;
     text-align: center;
     padding-top: 12rem;
+    padding-bottom: 8em;
   }
 
   .free-trial {
@@ -132,12 +160,14 @@
     color: #ffffff;
     padding-top: 3em;
     padding-bottom: 5em;
+
     .ui.header {
       width: 40%;
       font-size: 3em;
       color: #ffffff;
       margin: auto;
     }
+
     p {
       font-size: 1.25em;
       padding-top: 5em;
@@ -145,11 +175,120 @@
       width: 40%;
       margin: auto;
     }
+
     .ui.button {
       background: white;
       color: #1149b6;
       font-size: 1.25em;
       font-weight: 700;
+    }
+  }
+
+  @include mq($from: mobile, $until: tablet) {
+    .firstSec {
+      .ui.container {
+        .Section-content {
+          width: 90%;
+          padding-top: 5em;
+
+          .ui.header {
+            font-size: 2.5em;
+          }
+
+          p {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+
+    .thirdSec {
+      .ui.container {
+        .ui.header.topHeader {
+          width: 85%;
+          font-size: 20px;
+        }
+      }
+
+      .second-layer {
+        padding-top: 6em;
+
+        .card-layer {
+          width: 90%;
+
+          .text-layer {
+            width: 95%;
+          }
+        }
+      }
+
+      .companies {
+        .ui.header {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .Section4 {
+      padding-top: 6em;
+      padding-bottom: 6em;
+
+      .ui.header {
+        font-size: 16px;
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+    }
+
+    .free-trial {
+      .ui.header {
+        width: 80%;
+        font-size: 2em;
+      }
+
+      p {
+        width: 80%;
+        padding-top: 3em;
+        font-size: 16px;
+      }
+    }
+  }
+
+  @include mq($from: tablet, $until: desktop) {
+    .firstSec {
+      .ui.container {
+        .Section-content {
+          width: 70%;
+          padding-top: 6em;
+        }
+      }
+    }
+
+    .thirdSec {
+      .second-layer {
+        padding-top: 6em;
+
+        .card-layer {
+          width: 60%;
+
+          .text-layer {
+            width: 95%;
+          }
+        }
+      }
+    }
+
+    .free-trial {
+      .ui.header {
+        width: 60%;
+        font-size: 2em;
+      }
+
+      p {
+        width: 60%;
+        padding-top: 4em;
+        font-size: 16px;
+      }
     }
   }
 }

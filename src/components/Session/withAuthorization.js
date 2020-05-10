@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { withFireBase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
@@ -11,30 +11,32 @@ import AuthUserContext from './context';
 // This is also going to control permissions and roles. If the user is not an admin they can't see the admin page
 //  and viceversa.
 const withAuthorization = condition => Component => {
-    const WithAuthorization = props => {
+    class WithAuthorization extends React.Component {
         
-        
-        useEffect(() => {
-          const unsubscribe =  props
-            .firebase.onAuthUserListener(authUser => {
-                if(!condition(authUser)) {
-                    props.history.push(ROUTES.SIGN_IN)
-                }
-            }, () => props.history.push(ROUTES.SIGN_IN));
-            return () => {
-                unsubscribe()
-            }
-        }, [])
+        componentDidMount() {
+            this.listener = this.props
+                .firebase.onAuthUserListener(authUser => {
+
+                    if(!condition(authUser)) {
+                        this.props.history.push(ROUTES.SIGN_IN)
+                    }
+                }, () => this.props.history.push(ROUTES.SIGN_IN))
             
+        }
+
+        componentWillMount() {
+            this.listener();
+        }
+        
+        render() {
             // This prevents the page from showing the protected page before redirect happens.
-        return (
+            return (
             <AuthUserContext.Consumer>
                 {
                     authUser => condition(authUser) ? <Component  {...this.props}/> : null
                 }
-            </AuthUserContext.Consumer>
-        )
-        
+            </AuthUserContext.Consumer>)
+        }
     }
 
     return compose(
@@ -44,4 +46,4 @@ const withAuthorization = condition => Component => {
     (WithAuthorization);
 }
 
-export default withAuthorization;
+export default withAuthorization
