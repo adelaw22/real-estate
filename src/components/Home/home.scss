@@ -115,7 +115,7 @@ $mq-breakpoints: (mobile: 320px,
         }
 
         .ui.image {
-          margin: 10px 20px;
+          margin:auto;
         }
       }
 
@@ -123,6 +123,40 @@ $mq-breakpoints: (mobile: 320px,
 
 
 
+    }
+  }
+  @include mq ($from:mobile, $until: tablet){
+    .ui.grid{
+      .showResults{
+        padding:20px 18px;
+        .ui.header{
+          width:50%;
+          font-size:16px;
+        }
+        .ui.form{
+          width:50%;
+        }
+      }
+      .Home-details{
+        width:85%;
+        .Home-address{
+          margin-left:0pc
+        }
+        .ui.header.Payment{
+          margin-right:0px;
+        }
+      }
+      .ui.divider{
+       width:85%;
+      }
+      .mainNavigation{
+        .navigationNumbers{
+          width:90%;
+          .ui.image{
+            margin:auto;
+          }
+        }
+      }
     }
   }
 }

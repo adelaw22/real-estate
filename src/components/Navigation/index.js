@@ -143,6 +143,8 @@ const NoAuthNavigation = ({ activeItem, handleItemClick, clickHandler }) => {
                               name='Pricing'
                               active={activeItem === 'Pricing'}
                               onClick={handleItemClick}
+                              as={Link}
+                              to={ROUTES.PRICING}
                           />
                           <Menu.Item
                              name='Agent'

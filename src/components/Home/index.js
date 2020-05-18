@@ -7,7 +7,8 @@ import {
   Form,
   Checkbox,
   Image,
-  Divider
+  Divider,
+  Responsive
 } from "semantic-ui-react";
 import RoomFour from "../images/blue 4.png";
 import Bedroom from "../images/Rectangle 12.png";
@@ -53,7 +54,10 @@ const HomePage = () => {
   return (
     <div className='HomePage'>
       <NavBar2 />
-      <Grid>
+
+
+      <Responsive minWidth={768}>
+       <Grid>
         <Grid.Column
           style={{
             background: "#f2f2f2"
@@ -327,11 +331,282 @@ const HomePage = () => {
             <p>1</p>
             <p>2</p>
             <p>3</p>
+            <p>4</p>
             <Image src={rightArrow}/>
           </div>
          </div>
         </Grid.Column>
       </Grid>
+      </Responsive>
+
+     <Responsive minWidth={320} maxWidth={676}>
+        <Grid>
+           <Grid.Row
+          style={{
+            background: "#f2f2f2"
+          }}
+        >
+          <div className='filter-tab'>
+            <div className='filterHeader'>
+              <Header>Filter</Header>
+              <p className='reset'>Reset Filter</p>
+            </div>
+            <br />
+            <p style={{fontWeight:'bold'}}>Property type</p>
+
+            <Form>
+              <Form.Field control={Checkbox} label='House' value='house' />
+
+              <Form.Field
+                control={Checkbox}
+                label='Apartment'
+                value='apartment'
+              />
+
+              <Form.Field control={Checkbox} label='Room' value='room' />
+
+              <Form.Field
+                control={Checkbox}
+                label='Townhall'
+                value='townhall'
+              />
+
+              <Form.Field control={Checkbox} label='Parking' value='parking' />
+              
+              <Form.Group style={{marginTop:'30px'}}>
+                <Form.Select label='Min Price' options={priceValue} defaultValue='Any' style={{minWidth:'7em',background:'#e5e5e5',marginRight:'20px'}}/>
+                  <Form.Select label='Max Price' options={priceValue} defaultValue='Any' style={{ minWidth: '7em', background: '#e5e5e5', marginRight: '20px'}} />
+              </Form.Group>
+
+              <Form.Group  style={{marginTop:'30px'}}>
+                 <Form.Select label='Bedroom' options={roomNumbers} defaultValue='Any' style={{minWidth:'7em',background:'#e5e5e5',marginRight:'20px'}}/>
+                 <Form.Select label='Bathroom' options={roomNumbers} defaultValue='Any' style={{minWidth:'7em',background:'#e5e5e5',marginRight:'20px'}} />
+              </Form.Group>
+
+              <Form.Group style={{marginTop:'30px'}}>
+                 <Form.Select label='Size (Min)' options={roomSize} defaultValue='Any' style={{minWidth:'7em',background:'#e5e5e5',marginRight:'20px'}}/>
+                 < Form.Select label = 'Size (Max)'
+                 options = {
+                   roomSize
+                 }
+                 defaultValue = 'Any'
+                 style = {{minWidth: '7em',background: '#e5e5e5',marginRight:'20px'}}
+                 />
+              </Form.Group>
+            </Form>
+
+          </div>
+        </Grid.Row>
+
+        <Grid.Row style={{paddingTop:"0px"}}>
+            <div className='showResults'>
+              <Header>Showing 577 search results</Header>
+              <Form>
+                <Form.Field style={{ display: 'flex' }}>
+                  <label style={{ margin: 'auto' }}>Sort By:</label>
+                  <Form.Select options={Category} defaultValue='Newest' style={{ minWidth: '7em', background: '#e5e5e5' }} />
+                </Form.Field>
+              </Form>
+            </div>
+
+
+            <Grid>
+              <Grid.Row style={{padding:"20px 18px"}}>
+                <Image className='Rooms' src={RoomFour} />
+                <div className='Home-details'>
+                  <div class='Home-address'>
+                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                  </div>
+                  <Header className='Payment'>Ksh 450000</Header>
+                </div>
+                <Divider></Divider>
+                <Grid style={{ margin: "auto" }}>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={FullSize} />
+                      1520 ft
+                    </p>
+                  </Grid.Column>
+                </Grid>
+              </Grid.Row>
+
+              <Grid.Row style={{padding:"20px 18px"}}>
+                <Image className='Rooms' src={RoomFour} />
+                <div className='Home-details'>
+                  <div class='Home-address'>
+                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                  </div>
+                  <Header className='Payment'>Ksh 450000</Header>
+                </div>
+                <Divider></Divider>
+                <Grid style={{ margin: "auto" }}>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={FullSize} />
+                      1520 ft
+                    </p>
+                  </Grid.Column>
+                </Grid>
+              </Grid.Row>
+
+              <Grid.Row style={{padding:"20px 18px"}}>
+                <Image className='Rooms' src={RoomFour} />
+                <div className='Home-details'>
+                  <div class='Home-address'>
+                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                  </div>
+                  <Header className='Payment'>Ksh 450000</Header>
+                </div>
+                <Divider></Divider>
+                <Grid style={{ margin: "auto" }}>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={FullSize} />
+                      1520 ft
+                    </p>
+                  </Grid.Column>
+                </Grid>
+              </Grid.Row>
+
+              <Grid.Row style={{padding:"20px 18px"}}>
+                <Image className='Rooms' src={RoomFour} />
+                <div className='Home-details'>
+                  <div class='Home-address'>
+                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                  </div>
+                  <Header className='Payment'>Ksh 450000</Header>
+                </div>
+                <Divider></Divider>
+                <Grid style={{ margin: "auto" }}>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={FullSize} />
+                      1520 ft
+                    </p>
+                  </Grid.Column>
+                </Grid>
+              </Grid.Row>
+
+              <Grid.Row style={{padding:"20px 18px"}}>
+                <Image className='Rooms' src={RoomFour} />
+                <div className='Home-details'>
+                  <div class='Home-address'>
+                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                  </div>
+                  <Header className='Payment'>Ksh 450000</Header>
+                </div>
+                <Divider></Divider>
+                <Grid style={{ margin: "auto" }}>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={FullSize} />
+                      1520 ft
+                    </p>
+                  </Grid.Column>
+                </Grid>
+              </Grid.Row>
+
+              <Grid.Row style={{padding:" 20px 18px"}}>
+                <Image className='Rooms' src={RoomFour} />
+                <div className='Home-details'>
+                  <div class='Home-address'>
+                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                  </div>
+                  <Header className='Payment'>Ksh 450000</Header>
+                </div>
+                <Divider></Divider>
+                <Grid style={{ margin: "auto" }}>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={FullSize} />
+                      1520 ft
+                    </p>
+                  </Grid.Column>
+                </Grid>
+              </Grid.Row>
+
+
+              <div className="mainNavigation">
+            <div className='navigationNumbers'>
+            <Image src={leftArrow}/>
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+            <Image src={rightArrow}/>
+          </div>
+         </div>
+            </Grid>
+        </Grid.Row>
+        </Grid>
+     </Responsive>
+     
     </div>
   );
 };

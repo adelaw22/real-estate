@@ -8,5 +8,6 @@ export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
 export const PASSWORD_CHANGE = '/pw-change'
 export const CONTACT = '/Contact'
-export const PRICING = '/pricing'
+export const PRICING = '/Pricing'
+export const LANDLORD = '/LandlordPricing'
 export const SINGLEUNIT = '/SingleUnit'

@@ -86,6 +86,14 @@ $mq-breakpoints: (mobile: 320px,
           margin: auto;
         }
       }
+
+      .Map-sec {
+        margin-top: 40px;
+
+        .ui.image {
+          margin: auto;
+        }
+      }
     }
 
     .biggerMap {
@@ -146,6 +154,47 @@ $mq-breakpoints: (mobile: 320px,
           border-bottom: 2px solid rgba(34, 36, 38, 0.15);
           width: 85%;
           margin: 20px auto;
+        }
+      }
+    }
+  }
+
+  @include mq ($from:mobile, $until: tablet) {
+    .ui.container {
+      .ui.grid {
+        .ui.divider.Main {
+          margin-top: 14px;
+        }
+
+        .propertyFeatures {
+          height: 110px;
+          padding-top: 20px;
+        }
+
+        .ui.divider {
+          width: 95%;
+        }
+      }
+
+      .similarHomes {
+        .ui.grid {
+          padding: 14px;
+
+          .Home-details {
+            width: 80%;
+
+            .Home-address {
+              margin-left: 0px;
+            }
+
+            .ui.header.Payment {
+              margin-right: 0px;
+            }
+          }
+
+          .ui.divider {
+            width: 80%;
+          }
         }
       }
     }

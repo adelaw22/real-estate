@@ -7,7 +7,8 @@ import {
   Header,
   Button,
   Divider,
-  Menu
+  Menu,
+  Responsive
 } from "semantic-ui-react";
 import RoomOne from "../images/blue 1.png";
 import RoomTwo from "../images/blue 3.png";
@@ -26,6 +27,8 @@ import Transport from "../images/Transport.png";
 import HealthCare from "../images/hospital.png";
 import Entertainment from "../images/Entertainment.png";
 import FullSize from "../images/Rectangle 11.png";
+import SmallMap from "../images/Rectangle 25.png";
+import BiggerMap from "../images/map 1.png";
 
 export class SingleUnit extends Component {
   render() {
@@ -37,43 +40,196 @@ export class SingleUnit extends Component {
             paddingTop: "40px"
           }}
         >
-          <Grid>
-            <Grid.Column width={10}>
+          <Responsive minWidth={768}>
+            <Grid>
+              <Grid.Column width={10}>
+                <Grid.Row>
+                  <Image src={RoomOne} />
+                </Grid.Row>
+                <Grid.Row
+                  style={{
+                    display: "flex",
+                    marginTop: "36px"
+                  }}
+                >
+                  <Grid.Column>
+                    <Image
+                      src={RoomTwo}
+                      style={{
+                        width: "200px",
+                        height: "110px"
+                      }}
+                    />
+                  </Grid.Column>
+                  <Grid.Column>
+                    <Image
+                      src={RoomFour}
+                      style={{
+                        width: "200px",
+                        height: "110px",
+                        marginLeft: "39px",
+                        marginRight: "39px"
+                      }}
+                    />
+                  </Grid.Column>
+                  <Grid.Column>
+                    <Image
+                      src={RoomThree}
+                      style={{
+                        width: "200px",
+                        height: "110px"
+                      }}
+                    />
+                  </Grid.Column>
+                </Grid.Row>
+                <Divider className='Main'></Divider>
+
+                <div className='propertyFeatures'>
+                  <div className='propertyAddress'>
+                    <Header
+                      style={{
+                        color: "#1149b6",
+                        fontSize: "24px",
+                        marginBottom: "10px"
+                      }}
+                    >
+                      Lavington
+                    </Header>
+                    <p>James Gichuru Road</p>
+                  </div>
+
+                  <Header className='priceHeader'>$72000</Header>
+                </div>
+
+                <Divider></Divider>
+
+                <Grid
+                  style={{
+                    width: "100%",
+                    fontWeight: "700",
+                    fontSize: "17px",
+                    marginTop: "30px",
+                    marginBottom: "40px"
+                  }}
+                >
+                  <Grid.Column width={5}>
+                    <p style={{ color: "#84848" }}>Bedrooms</p>
+                    <p style={{ display: "flex" }}>
+                      4 <Image src={Bedroom} style={{ marginLeft: "10px" }} />
+                    </p>
+                    <p style={{ color: "#84848", marginTop: "20px" }}>Built</p>
+                    <p>2008</p>
+                  </Grid.Column>
+                  <Grid.Column width={6} style={{ paddingLeft: "80px" }}>
+                    <p style={{ color: "#84848" }}>Bathrooms</p>
+                    <p style={{ display: "flex" }}>
+                      2 <Image src={Bathrooms} style={{ marginLeft: "10px" }} />
+                    </p>
+                    <p style={{ color: "#84848", marginTop: "20px" }}>
+                      Packing
+                    </p>
+                    <p>1 indoor</p>
+                  </Grid.Column>
+                  <Grid.Column width={5} style={{ paddingLeft: "80px" }}>
+                    <p style={{ color: "#84848" }}>Area space</p>
+                    <p>1024 ft</p>
+                    <p style={{ color: "#84848", marginTop: "20px" }}>
+                      Area safety
+                    </p>
+                    <p style={{ color: "#08f508de" }}>Good</p>
+                  </Grid.Column>
+                </Grid>
+              </Grid.Column>
+              <Grid.Column
+                width={5}
+                style={{
+                  marginLeft: "60px"
+                }}
+              >
+                <div className='AgentProfile'>
+                  <div className='profilePicture'></div> <p> Agent </p>
+                  <Header> Jane Doe </Header>
+                  <Button
+                    secondary
+                    style={{
+                      display: "flex",
+                      marginTop: "40px"
+                    }}
+                  >
+                    <p
+                      style={{
+                        marginTop: "3px",
+                        marginBottom: "5px"
+                      }}
+                    >
+                      {" "}
+                      +544 7 ** * ** *
+                    </p>
+                    <p
+                      style={{
+                        color: "#fff",
+                        textDecoration: "underline",
+                        marginTop: "3px",
+                        marginLeft: "10px",
+                        marginBottom: "5px"
+                      }}
+                    >
+                      Show Number
+                    </p>
+                  </Button>
+                  <Button
+                    primary
+                    style={{
+                      display: "flex",
+                      marginTop: "18px"
+                    }}
+                  >
+                    Contact Agent{" "}
+                    <Image
+                      src={EmailContact}
+                      style={{
+                        marginLeft: "72px"
+                      }}
+                    />
+                  </Button>
+                </div>
+                <div className='Map-sec'>
+                  <Image src={SmallMap} />
+                </div>
+              </Grid.Column>
+            </Grid>
+          </Responsive>
+
+          <Responsive minWidth={320} maxWidth={767}>
+            <Grid style={{ margin: "0px" }}>
               <Grid.Row>
                 <Image src={RoomOne} />
               </Grid.Row>
-              <Grid.Row
-                style={{
-                  display: "flex",
-                  marginTop: "36px"
-                }}
-              >
-                <Grid.Column>
+              <Grid.Row>
+                <Grid.Column width={5} style={{ padding: "0px 5px" }}>
                   <Image
                     src={RoomTwo}
                     style={{
                       width: "200px",
-                      height: "110px"
+                      height: "90px"
                     }}
                   />
                 </Grid.Column>
-                <Grid.Column>
+                <Grid.Column width={5} style={{ padding: "0px 5px" }}>
                   <Image
                     src={RoomFour}
                     style={{
                       width: "200px",
-                      height: "110px",
-                      marginLeft: "39px",
-                      marginRight: "39px"
+                      height: "90px"
                     }}
                   />
                 </Grid.Column>
-                <Grid.Column>
+                <Grid.Column width={5} style={{ padding: "0px 5px" }}>
                   <Image
                     src={RoomThree}
                     style={{
                       width: "200px",
-                      height: "110px"
+                      height: "90px"
                     }}
                   />
                 </Grid.Column>
@@ -98,98 +254,100 @@ export class SingleUnit extends Component {
               </div>
 
               <Divider></Divider>
-
               <Grid
                 style={{
                   width: "100%",
                   fontWeight: "700",
                   fontSize: "17px",
-                  marginTop: "30px",
-                  marginBottom: "40px"
+                  marginTop: "16px",
+                  marginBottom: "16px"
                 }}
               >
-                <Grid.Column width={5}>
+                <Grid.Row style={{ display: "block" }}>
                   <p style={{ color: "#84848" }}>Bedrooms</p>
                   <p style={{ display: "flex" }}>
                     4 <Image src={Bedroom} style={{ marginLeft: "10px" }} />
                   </p>
                   <p style={{ color: "#84848", marginTop: "20px" }}>Built</p>
                   <p>2008</p>
-                </Grid.Column>
-                <Grid.Column width={6} style={{ paddingLeft: "80px" }}>
+                </Grid.Row>
+                <Grid.Row style={{ display: "block" }}>
                   <p style={{ color: "#84848" }}>Bathrooms</p>
                   <p style={{ display: "flex" }}>
                     2 <Image src={Bathrooms} style={{ marginLeft: "10px" }} />
                   </p>
                   <p style={{ color: "#84848", marginTop: "20px" }}>Packing</p>
                   <p>1 indoor</p>
-                </Grid.Column>
-                <Grid.Column width={5} style={{ paddingLeft: "80px" }}>
+                </Grid.Row>
+                <Grid.Row style={{ display: "block" }}>
                   <p style={{ color: "#84848" }}>Area space</p>
                   <p>1024 ft</p>
                   <p style={{ color: "#84848", marginTop: "20px" }}>
                     Area safety
                   </p>
                   <p style={{ color: "#08f508de" }}>Good</p>
-                </Grid.Column>
+                </Grid.Row>
               </Grid>
-            </Grid.Column>
-            <Grid.Column
-              width={5}
-              style={{
-                marginLeft: "60px"
-              }}
-            >
-              <div className='AgentProfile'>
-                <div className='profilePicture'></div> <p> Agent </p>
-                <Header> Jane Doe </Header>
-                <Button
-                  secondary
-                  style={{
-                    display: "flex",
-                    marginTop: "40px"
-                  }}
-                >
-                  <p
-                    style={{
-                      marginTop: "3px",
-                      marginBottom: "5px"
-                    }}
-                  >
-                    {" "}
-                    +544 7 ** * ** *
-                  </p>
-                  <p
-                    style={{
-                      color: "#fff",
-                      textDecoration: "underline",
-                      marginTop: "3px",
-                      marginLeft: "10px",
-                      marginBottom: "5px"
-                    }}
-                  >
-                    Show Number
-                  </p>
-                </Button>
-                <Button
-                  primary
-                  style={{
-                    display: "flex",
-                    marginTop: "18px"
-                  }}
-                >
-                  Contact Agent{" "}
-                  <Image
-                    src={EmailContact}
-                    style={{
-                      marginLeft: "72px"
-                    }}
-                  />
-                </Button>
-              </div>
-              <div className='Map-sec'> </div>
-            </Grid.Column>
-          </Grid>
+
+              <Grid>
+                <Grid.Row>
+                  <div className='AgentProfile'>
+                    <div className='profilePicture'></div> <p> Agent </p>
+                    <Header> Jane Doe </Header>
+                    <Button
+                      secondary
+                      style={{
+                        display: "flex",
+                        marginTop: "40px"
+                      }}
+                    >
+                      <p
+                        style={{
+                          marginTop: "3px",
+                          marginBottom: "5px"
+                        }}
+                      >
+                        {" "}
+                        +544 7 ** * ** *
+                      </p>
+                      <p
+                        style={{
+                          color: "#fff",
+                          textDecoration: "underline",
+                          marginTop: "3px",
+                          marginLeft: "10px",
+                          marginBottom: "5px"
+                        }}
+                      >
+                        Show Number
+                      </p>
+                    </Button>
+                    <Button
+                      primary
+                      style={{
+                        display: "flex",
+                        marginTop: "18px"
+                      }}
+                    >
+                      Contact Agent{" "}
+                      <Image
+                        src={EmailContact}
+                        style={{
+                          marginLeft: "72px"
+                        }}
+                      />
+                    </Button>
+                  </div>
+                </Grid.Row>
+
+                <Grid.Row>
+                  <div className='Map-sec'>
+                    <Image src={SmallMap} />
+                  </div>
+                </Grid.Row>
+              </Grid>
+            </Grid>
+          </Responsive>
 
           <Header
             style={{ textAlign: "center", fontSize: "28px", color: "#1149b6" }}
@@ -198,42 +356,46 @@ export class SingleUnit extends Component {
           </Header>
 
           <Divider style={{ marginBottom: "0px" }}></Divider>
-          <Menu pointing secondary widths={8} icon='labeled'>
-            <Menu.Item>
-              <Image src={Bank} />
-              BANKS
-            </Menu.Item>
-            <Menu.Item>
-              <Image src={Shop} />
-              SHOPS
-            </Menu.Item>
-            <Menu.Item>
-              <Image src={School} />
-              SCHOOLS
-            </Menu.Item>
-            <Menu.Item>
-              <Image src={Worship} />
-              WORSHIP
-            </Menu.Item>
-            <Menu.Item>
-              <Image src={Restaurant} />
-              RESTAURANT
-            </Menu.Item>
-            <Menu.Item>
-              <Image src={Transport} />
-              TRANSPORT
-            </Menu.Item>
-            <Menu.Item>
-              <Image src={HealthCare} />
-              HEALTH CARE
-            </Menu.Item>
-            <Menu.Item>
-              <Image src={Entertainment} />
-              ENTERTAINMENT
-            </Menu.Item>
-          </Menu>
+          <Responsive minWidth={768}>
+            <Menu pointing secondary widths={8} icon='labeled'>
+              <Menu.Item>
+                <Image src={Bank} />
+                BANKS
+              </Menu.Item>
+              <Menu.Item>
+                <Image src={Shop} />
+                SHOPS
+              </Menu.Item>
+              <Menu.Item>
+                <Image src={School} />
+                SCHOOLS
+              </Menu.Item>
+              <Menu.Item>
+                <Image src={Worship} />
+                WORSHIP
+              </Menu.Item>
+              <Menu.Item>
+                <Image src={Restaurant} />
+                RESTAURANT
+              </Menu.Item>
+              <Menu.Item>
+                <Image src={Transport} />
+                TRANSPORT
+              </Menu.Item>
+              <Menu.Item>
+                <Image src={HealthCare} />
+                HEALTH CARE
+              </Menu.Item>
+              <Menu.Item>
+                <Image src={Entertainment} />
+                ENTERTAINMENT
+              </Menu.Item>
+            </Menu>
+          </Responsive>
 
-          <div className='biggerMap'></div>
+          <div className='biggerMap'>
+            <Image src={BiggerMap} />
+          </div>
 
           <div className='similarHomes'>
             <div className='topHeader'>
@@ -242,97 +404,217 @@ export class SingleUnit extends Component {
               <Button primary>View All</Button>
             </div>
 
-            <Grid>
-              <Grid.Column width={5}>
-                <Image className='Rooms' src={RoomFour} />
-                <div className='Home-details'>
-                  <div class='Home-address'>
-                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
-                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
+            <Responsive minWidth={768}>
+              <Grid>
+                <Grid.Column width={5}>
+                  <Image className='Rooms' src={RoomFour} />
+                  <div className='Home-details'>
+                    <div class='Home-address'>
+                      <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                      <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                    </div>
+                    <Header className='Payment'>Ksh 450000</Header>
                   </div>
-                  <Header className='Payment'>Ksh 450000</Header>
-                </div>
-                <Divider></Divider>
-                <Grid style={{ margin: "auto" }}>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
-                    </p>
-                  </Grid.Column>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
-                    </p>
-                  </Grid.Column>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={FullSize} />
-                      1520 ft
-                    </p>
-                  </Grid.Column>
-                </Grid>
-              </Grid.Column>
+                  <Divider></Divider>
+                  <Grid style={{ margin: "auto" }}>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image
+                          style={{ marginRight: "10px" }}
+                          src={Bathrooms}
+                        />
+                        2
+                      </p>
+                    </Grid.Column>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                      </p>
+                    </Grid.Column>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image style={{ marginRight: "10px" }} src={FullSize} />
+                        1520 ft
+                      </p>
+                    </Grid.Column>
+                  </Grid>
+                </Grid.Column>
 
-              <Grid.Column width={5}>
-                <Image className='Rooms' src={RoomFour} />
-                <div className='Home-details'>
-                  <div class='Home-address'>
-                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
-                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                <Grid.Column width={5}>
+                  <Image className='Rooms' src={RoomFour} />
+                  <div className='Home-details'>
+                    <div class='Home-address'>
+                      <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                      <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                    </div>
+                    <Header className='Payment'>Ksh 450000</Header>
                   </div>
-                  <Header className='Payment'>Ksh 450000</Header>
-                </div>
-                <Divider></Divider>
-                <Grid style={{ margin: "auto" }}>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
-                    </p>
-                  </Grid.Column>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
-                    </p>
-                  </Grid.Column>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={FullSize} />
-                      1520 ft
-                    </p>
-                  </Grid.Column>
-                </Grid>
-              </Grid.Column>
+                  <Divider></Divider>
+                  <Grid style={{ margin: "auto" }}>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image
+                          style={{ marginRight: "10px" }}
+                          src={Bathrooms}
+                        />
+                        2
+                      </p>
+                    </Grid.Column>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                      </p>
+                    </Grid.Column>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image style={{ marginRight: "10px" }} src={FullSize} />
+                        1520 ft
+                      </p>
+                    </Grid.Column>
+                  </Grid>
+                </Grid.Column>
 
-              <Grid.Column width={5}>
-                <Image className='Rooms' src={RoomFour} />
-                <div className='Home-details'>
-                  <div class='Home-address'>
-                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
-                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                <Grid.Column width={5}>
+                  <Image className='Rooms' src={RoomFour} />
+                  <div className='Home-details'>
+                    <div class='Home-address'>
+                      <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                      <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                    </div>
+                    <Header className='Payment'>Ksh 450000</Header>
                   </div>
-                  <Header className='Payment'>Ksh 450000</Header>
-                </div>
-                <Divider></Divider>
-                <Grid style={{ margin: "auto" }}>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
-                    </p>
-                  </Grid.Column>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
-                    </p>
-                  </Grid.Column>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={FullSize} />
-                      1520 ft
-                    </p>
-                  </Grid.Column>
-                </Grid>
-              </Grid.Column>
-            </Grid>
+                  <Divider></Divider>
+                  <Grid style={{ margin: "auto" }}>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image
+                          style={{ marginRight: "10px" }}
+                          src={Bathrooms}
+                        />
+                        2
+                      </p>
+                    </Grid.Column>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                      </p>
+                    </Grid.Column>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image style={{ marginRight: "10px" }} src={FullSize} />
+                        1520 ft
+                      </p>
+                    </Grid.Column>
+                  </Grid>
+                </Grid.Column>
+              </Grid>
+            </Responsive>
+
+            <Responsive minWidth={320} maxWidth={767}>
+              <Grid style={{ margin: "0px" }}>
+                <Grid.Row>
+                  <Image className='Rooms' src={RoomFour} />
+                  <div className='Home-details'>
+                    <div class='Home-address'>
+                      <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                      <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                    </div>
+                    <Header className='Payment'>Ksh 450000</Header>
+                  </div>
+                  <Divider></Divider>
+                  <Grid style={{ margin: "auto" }}>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image
+                          style={{ marginRight: "10px" }}
+                          src={Bathrooms}
+                        />
+                        2
+                      </p>
+                    </Grid.Column>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                      </p>
+                    </Grid.Column>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image style={{ marginRight: "10px" }} src={FullSize} />
+                        1520 ft
+                      </p>
+                    </Grid.Column>
+                  </Grid>
+                </Grid.Row>
+
+                <Grid.Row>
+                  <Image className='Rooms' src={RoomFour} />
+                  <div className='Home-details'>
+                    <div class='Home-address'>
+                      <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                      <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                    </div>
+                    <Header className='Payment'>Ksh 450000</Header>
+                  </div>
+                  <Divider></Divider>
+                  <Grid style={{ margin: "auto" }}>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image
+                          style={{ marginRight: "10px" }}
+                          src={Bathrooms}
+                        />
+                        2
+                      </p>
+                    </Grid.Column>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                      </p>
+                    </Grid.Column>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image style={{ marginRight: "10px" }} src={FullSize} />
+                        1520 ft
+                      </p>
+                    </Grid.Column>
+                  </Grid>
+                </Grid.Row>
+
+                <Grid.Row>
+                  <Image className='Rooms' src={RoomFour} />
+                  <div className='Home-details'>
+                    <div class='Home-address'>
+                      <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                      <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                    </div>
+                    <Header className='Payment'>Ksh 450000</Header>
+                  </div>
+                  <Divider></Divider>
+                  <Grid style={{ margin: "auto" }}>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image
+                          style={{ marginRight: "10px" }}
+                          src={Bathrooms}
+                        />
+                        2
+                      </p>
+                    </Grid.Column>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                      </p>
+                    </Grid.Column>
+                    <Grid.Column width={5}>
+                      <p style={{ display: "flex" }}>
+                        <Image style={{ marginRight: "10px" }} src={FullSize} />
+                        1520 ft
+                      </p>
+                    </Grid.Column>
+                  </Grid>
+                </Grid.Row>
+              </Grid>
+            </Responsive>
           </div>
         </Container>
       </div>

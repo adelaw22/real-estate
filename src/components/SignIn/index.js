@@ -102,10 +102,12 @@ const SignInPage = () => {
     name = {
       "Sign Up"
     }
-    />{" "} <
-    /Grid.Column>{" "} <
-    /Grid>{" "} <
-    /Container> <
+    />{" "} < /
+    Grid.Column > {
+      " "
+    } <
+    /Grid>{" "} < /
+    Container > <
     /div>
   );
 };
@@ -168,81 +170,82 @@ const SignInFormBase = props => {
   };
 
   return ( <
-    div > {
-      " "
-    } {
-      error.length > 0 ? ( <
-        Message error header = 'Sorry Login failed'
-        content = {
-          error
-        }
-        />
-      ) : (
-        ""
-      )
-    } {
-      " "
-    } <
-    Form onSubmit = {
-      handleSubmit(onSubmit)
-    } >
-    <
-    Form.Field required >
-    <
-    label > Email < /label>{" "} <
-    input name = 'email'
-    onChange = {
-      onChange
-    }
-    value = {
-      loginDetail.email
-    }
-    width = {
-      8
-    }
-    ref = {
-      register({
-        required: "Please enter an email",
-        pattern: {
-          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-          message: "A valid email is required"
-        }
-      })
-    }
-    type = 'email'
-    placeholder = 'Email' /
-    > {
-      errors.email && ( <
-        small className = 'text-danger' > {
-          errors.email.message
-        } < /small>
-      )
-    } {
-      " "
-    } <
-    /Form.Field>{" "} <
-    Form.Field required >
-    <
-    label > Password < /label>{" "} <
-    input name = 'password'
-    onChange = {
-      onChange
-    }
-    value = {
-      loginDetail.password
-    }
-    type = 'password'
-    width = {
-      8
-    }
-    placeholder = 'Password'
-    ref = {
-      register({
-        required: "Please enter your password",
-        minLength: 3
-      })
-    }
-    />{" "} {
+      div > {
+        " "
+      } {
+        error.length > 0 ? ( <
+          Message error header = 'Sorry Login failed'
+          content = {
+            error
+          }
+          />
+        ) : (
+          ""
+        )
+      } {
+        " "
+      } <
+      Form onSubmit = {
+        handleSubmit(onSubmit)
+      } >
+      <
+      Form.Field required >
+      <
+      label > Email < /label>{" "} <
+      input name = 'email'
+      onChange = {
+        onChange
+      }
+      value = {
+        loginDetail.email
+      }
+      width = {
+        8
+      }
+      ref = {
+        register({
+          required: "Please enter an email",
+          pattern: {
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+            message: "A valid email is required"
+          }
+        })
+      }
+      type = 'email'
+      placeholder = 'Email' /
+      >
+      {
+        errors.email && ( <
+          small className = 'text-danger' > {
+            errors.email.message
+          } < /small>
+        )
+      } {
+        " "
+      } <
+      /Form.Field>{" "} <
+      Form.Field required >
+      <
+      label > Password < /label>{" "} <
+      input name = 'password'
+      onChange = {
+        onChange
+      }
+      value = {
+        loginDetail.password
+      }
+      type = 'password'
+      width = {
+        8
+      }
+      placeholder = 'Password'
+      ref = {
+        register({
+          required: "Please enter your password",
+          minLength: 3
+        })
+      }
+      />{" "} {
       errors.password && ( <
         small className = 'text-danger' > {
           errors.password.message
@@ -252,25 +255,25 @@ const SignInFormBase = props => {
       " "
     } <
     /Form.Field> <
-    Button loading = {
-      loading
-    }
-    type = 'submit'
-    fluid primary as = {
-      Link
-    }
-    to = {
-      ROUTES.HOME
+  Button loading = {
+    loading
+  }
+  type = 'submit'
+  fluid primary as = {
+    Link
+  }
+  to = {
+      ROUTES.SINGLEUNIT
     } >
     Sign In {
       " "
     } <
     /Button>{" "} <
-    SignInGoogleBase / >
+  SignInGoogleBase / >
     <
-    /Form>{" "} <
-    /div>
-  );
+    /Form>{" "} < /
+  div >
+);
 };
 
 const SignInForm = compose(withRouter, withFireBase)(SignInFormBase);

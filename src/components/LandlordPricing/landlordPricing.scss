@@ -1,0 +1,75 @@
+@import "~sass-mq";
+
+$mq-breakpoints:(mobile: 320px,
+    tablet: 768px,
+    desktop: 980px,
+    wide: 1300px,
+    // Tweakpoints
+    desktopAd: 810px,
+    mobileLandscape: 480px);
+
+
+.pricePage {
+    width: 100%;
+    height: auto;
+
+    .priceSec {
+        width: 100%;
+        height: auto;
+        background: #f8f8f8;
+        padding: 60px 0;
+
+        .ui.container {
+            .ui.header.top-header {
+                text-align: center;
+                font-size: 32px;
+            }
+
+            .top-P {
+                text-align: center;
+
+            }
+
+            .ui.grid {
+                display: flex !important;
+                margin: 0px;
+
+                .cardColumn {
+                    width: 80%;
+                    margin: auto;
+                    height: auto;
+                    border: 1px solid #000000;
+                    background: #ffffff;
+                    border-radius: 5px;
+                    padding: 30px;
+                    text-align: center;
+
+                    .ui.image {
+                        margin: auto;
+                    }
+
+                    .main-price {
+                        color: #000000;
+                    }
+
+                    p {
+                        color: #c0c0c0;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mq($from:mobile, $until: tablet) {
+        .priceSec {
+            padding: 40px 0;
+
+            .ui.container {
+                .ui.header.top-header {
+                    font-size: 28px;
+                }
+
+            }
+        }
+    }
+}
