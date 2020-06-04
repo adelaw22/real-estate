@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar2 from "../Navbar2";
+import {Link} from 'react-router-dom';
 import "./home.scss";
 import {
   Grid,
@@ -14,8 +15,9 @@ import RoomFour from "../images/blue 4.png";
 import Bedroom from "../images/Rectangle 12.png";
 import Bathrooms from "../images/Rectangle 10.png";
 import FullSize from "../images/Rectangle 11.png";
-import rightArrow from "../images/icon-right.png"
-import leftArrow from "../images/icon.png"
+import rightArrow from "../images/icon-right.png";
+import leftArrow from "../images/icon.png";
+import * as ROUTES from "../../constants/routes"
 
 const priceValue= [
   {key: 'any', value:'any',text:'Any'}, 
@@ -57,12 +59,12 @@ const HomePage = () => {
 
 
       <Responsive minWidth={768}>
-       <Grid>
-        <Grid.Column
+       <div className="homeBody">
+        <div className="filterSec"
           style={{
             background: "#f2f2f2"
           }}
-          width={4}
+          
         >
           <div className='filter-tab'>
             <div className='filterHeader'>
@@ -91,18 +93,20 @@ const HomePage = () => {
 
               <Form.Field control={Checkbox} label='Parking' value='parking' />
               
-              <Form.Group style={{marginTop:'30px'}}>
-                <Form.Select label='Min Price' options={priceValue} defaultValue='Any' style={{minWidth:'9em',background:'#e5e5e5',marginRight:'10px'}}/>
-                 <Form.Select label='Max Price' options={priceValue} defaultValue='Any' style={{minWidth:'9em',background:'#e5e5e5'}} />
+            </Form>
+            <Form>
+               <Form.Group style={{marginTop:'30px'}} widths={2}>
+                <Form.Select label='Min Price' options={priceValue} defaultValue='Any' style={{minWidth:'100%',background:'#e5e5e5',marginRight:'10px'}}/>
+                 <Form.Select label='Max Price' options={priceValue} defaultValue='Any' style={{minWidth:'100%',background:'#e5e5e5'}} />
               </Form.Group>
 
-              <Form.Group  style={{marginTop:'30px'}}>
-                 <Form.Select label='Bedroom' options={roomNumbers} defaultValue='Any' style={{minWidth:'9em',background:'#e5e5e5',marginRight:'10px'}}/>
-                 <Form.Select label='Bathroom' options={roomNumbers} defaultValue='Any' style={{minWidth:'9em',background:'#e5e5e5'}} />
+              <Form.Group  style={{marginTop:'30px'}} widths={2}>
+                 <Form.Select label='Bedroom' options={roomNumbers} defaultValue='Any' style={{minWidth:'100%',background:'#e5e5e5',marginRight:'10px'}}/>
+                 <Form.Select label='Bathroom' options={roomNumbers} defaultValue='Any' style={{minWidth:'100%',background:'#e5e5e5'}} />
               </Form.Group>
 
-              <Form.Group style={{marginTop:'30px'}}>
-                 <Form.Select label='Size (Min)' options={roomSize} defaultValue='Any' style={{minWidth:'9em',background:'#e5e5e5',marginRight:'10px'}}/>
+              <Form.Group style={{marginTop:'30px'}} widths={2}>
+                 <Form.Select label='Size (Min)' options={roomSize} defaultValue='Any' style={{minWidth:'100%',background:'#e5e5e5',marginRight:'10px'}}/>
                  < Form.Select label = 'Size (Max)'
                  options = {
                    roomSize
@@ -110,7 +114,7 @@ const HomePage = () => {
                  defaultValue = 'Any'
                  style = {
                    {
-                     minWidth: '9em',
+                     minWidth: "100%",
                      
                        
                          background: '#e5e5e5'
@@ -123,11 +127,11 @@ const HomePage = () => {
             </Form>
 
           </div>
-        </Grid.Column>
+        </div>
 
 
 
-        <Grid.Column width={12} style={{padding:'0px'}}>
+        <div className="roomSamples" style={{padding:'0px'}}>
 
           <div className='showResults'>
             <Header>Showing 577 search results</Header>
@@ -142,8 +146,8 @@ const HomePage = () => {
 
           <Grid>
             <Grid.Row>
-              <Grid.Column width={5}>
-                <Image className='Rooms' src={RoomFour} />
+              <Grid.Column width={5} >
+                <Image className='Rooms' src={RoomFour} as={Link} to={ROUTES.SINGLEUNIT} />
                 <div className='Home-details'>
                   <div class='Home-address'>
                     <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
@@ -172,8 +176,8 @@ const HomePage = () => {
                 </Grid>
               </Grid.Column>
 
-              <Grid.Column width={5}>
-                <Image className='Rooms' src={RoomFour} />
+              <Grid.Column width={5} >
+                <Image className='Rooms' src={RoomFour} as={Link} to={ROUTES.SINGLEUNIT} />
                 <div className='Home-details'>
                   <div class='Home-address'>
                     <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
@@ -202,8 +206,8 @@ const HomePage = () => {
                 </Grid>
               </Grid.Column>
 
-              <Grid.Column width={5}>
-                <Image className='Rooms' src={RoomFour} />
+              <Grid.Column width={5} >
+                <Image className='Rooms' src={RoomFour}as={Link} to={ROUTES.SINGLEUNIT} />
                 <div className='Home-details'>
                   <div class='Home-address'>
                     <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
@@ -232,9 +236,41 @@ const HomePage = () => {
                 </Grid>
               </Grid.Column>
             </Grid.Row>
+
+
             <Grid.Row style={{marginTop:'25px',marginBottom:'25px'}}>
               <Grid.Column width={5}>
-                <Image className='Rooms' src={RoomFour} />
+                <Image className='Rooms' src={RoomFour} as={Link} to={ROUTES.SINGLEUNIT} />
+                <div className='Home-details'>
+                  <div class='Home-address'>
+                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                  </div>
+                  <Header className='Payment'>Ksh 450000</Header>
+                </div>
+                <Divider></Divider>
+                <Grid style={{ margin: "auto" }}>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={FullSize} />
+                      1520 ft
+                    </p>
+                  </Grid.Column>
+                </Grid>
+              </Grid.Column>
+
+              <Grid.Column width={5} >
+                <Image className='Rooms' src={RoomFour} as={Link} to={ROUTES.SINGLEUNIT} />
                 <div className='Home-details'>
                   <div class='Home-address'>
                     <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
@@ -264,37 +300,7 @@ const HomePage = () => {
               </Grid.Column>
 
               <Grid.Column width={5}>
-                <Image className='Rooms' src={RoomFour} />
-                <div className='Home-details'>
-                  <div class='Home-address'>
-                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
-                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
-                  </div>
-                  <Header className='Payment'>Ksh 450000</Header>
-                </div>
-                <Divider></Divider>
-                <Grid style={{ margin: "auto" }}>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
-                    </p>
-                  </Grid.Column>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
-                    </p>
-                  </Grid.Column>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={FullSize} />
-                      1520 ft
-                    </p>
-                  </Grid.Column>
-                </Grid>
-              </Grid.Column>
-
-              <Grid.Column width={5}>
-                <Image className='Rooms' src={RoomFour} />
+                <Image className='Rooms' src={RoomFour}as={Link} to={ROUTES.SINGLEUNIT} />
                 <div className='Home-details'>
                   <div class='Home-address'>
                     <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
@@ -335,16 +341,19 @@ const HomePage = () => {
             <Image src={rightArrow}/>
           </div>
          </div>
-        </Grid.Column>
-      </Grid>
+        </div>
+      </div>
       </Responsive>
 
-     <Responsive minWidth={320} maxWidth={676}>
-        <Grid>
-           <Grid.Row
+
+
+       <Responsive minWidth={320} maxWidth={767}>
+       <div className="homeBody">
+        <div className="filterSec"
           style={{
-            background: "#f2f2f2"
+            background: "#f2f2f2",width:"100%"
           }}
+          
         >
           <div className='filter-tab'>
             <div className='filterHeader'>
@@ -373,46 +382,61 @@ const HomePage = () => {
 
               <Form.Field control={Checkbox} label='Parking' value='parking' />
               
-              <Form.Group style={{marginTop:'30px'}}>
-                <Form.Select label='Min Price' options={priceValue} defaultValue='Any' style={{minWidth:'7em',background:'#e5e5e5',marginRight:'20px'}}/>
-                  <Form.Select label='Max Price' options={priceValue} defaultValue='Any' style={{ minWidth: '7em', background: '#e5e5e5', marginRight: '20px'}} />
+            </Form>
+            <Form>
+               <Form.Group style={{marginTop:'30px'}} widths={2}>
+                <Form.Select label='Min Price' options={priceValue} defaultValue='Any' style={{minWidth:'50%',background:'#e5e5e5',marginRight:'10px'}}/>
+                 <Form.Select label='Max Price' options={priceValue} defaultValue='Any' style={{minWidth:'50%',background:'#e5e5e5'}} />
               </Form.Group>
 
-              <Form.Group  style={{marginTop:'30px'}}>
-                 <Form.Select label='Bedroom' options={roomNumbers} defaultValue='Any' style={{minWidth:'7em',background:'#e5e5e5',marginRight:'20px'}}/>
-                 <Form.Select label='Bathroom' options={roomNumbers} defaultValue='Any' style={{minWidth:'7em',background:'#e5e5e5',marginRight:'20px'}} />
+              <Form.Group  style={{marginTop:'30px'}} widths={2}>
+                 <Form.Select label='Bedroom' options={roomNumbers} defaultValue='Any' style={{minWidth:'50%',background:'#e5e5e5',marginRight:'10px'}}/>
+                 <Form.Select label='Bathroom' options={roomNumbers} defaultValue='Any' style={{minWidth:'50%',background:'#e5e5e5'}} />
               </Form.Group>
 
-              <Form.Group style={{marginTop:'30px'}}>
-                 <Form.Select label='Size (Min)' options={roomSize} defaultValue='Any' style={{minWidth:'7em',background:'#e5e5e5',marginRight:'20px'}}/>
+              <Form.Group style={{marginTop:'30px'}} widths={2}>
+                 <Form.Select label='Size (Min)' options={roomSize} defaultValue='Any' style={{minWidth:'50%',background:'#e5e5e5',marginRight:'10px'}}/>
                  < Form.Select label = 'Size (Max)'
                  options = {
                    roomSize
                  }
                  defaultValue = 'Any'
-                 style = {{minWidth: '7em',background: '#e5e5e5',marginRight:'20px'}}
+                 style = {
+                   {
+                     minWidth: "50%",
+                     
+                       
+                         background: '#e5e5e5'
+                      
+                     
+                   }
+                 }
                  />
               </Form.Group>
             </Form>
 
           </div>
-        </Grid.Row>
-
-        <Grid.Row style={{paddingTop:"0px"}}>
-            <div className='showResults'>
-              <Header>Showing 577 search results</Header>
-              <Form>
-                <Form.Field style={{ display: 'flex' }}>
-                  <label style={{ margin: 'auto' }}>Sort By:</label>
-                  <Form.Select options={Category} defaultValue='Newest' style={{ minWidth: '7em', background: '#e5e5e5' }} />
-                </Form.Field>
-              </Form>
-            </div>
+        </div>
 
 
-            <Grid>
-              <Grid.Row style={{padding:"20px 18px"}}>
-                <Image className='Rooms' src={RoomFour} />
+
+        <div className="roomSamples" style={{padding:'0px',width:"100%"}}>
+
+          <div className='showResults'>
+            <Header>Showing 577 search results</Header>
+            <Form>
+              <Form.Field style={{display:'flex'}}>
+                  <label style={{margin:'auto'}}>Sort By:</label>
+                 <Form.Select  options={Category} defaultValue='Newest' style={{minWidth:'6.5em',background:'#e5e5e5'}} />
+              </Form.Field>
+            </Form>
+          </div>
+
+
+          <Grid>
+            <Grid.Row>
+              <Grid.Row>
+                <Image className='Rooms' src={RoomFour} as={Link} to={ROUTES.SINGLEUNIT} />
                 <div className='Home-details'>
                   <div class='Home-address'>
                     <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
@@ -441,8 +465,8 @@ const HomePage = () => {
                 </Grid>
               </Grid.Row>
 
-              <Grid.Row style={{padding:"20px 18px"}}>
-                <Image className='Rooms' src={RoomFour} />
+              <Grid.Row>
+                <Image className='Rooms' src={RoomFour} as={Link} to={ROUTES.SINGLEUNIT} />
                 <div className='Home-details'>
                   <div class='Home-address'>
                     <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
@@ -471,8 +495,42 @@ const HomePage = () => {
                 </Grid>
               </Grid.Row>
 
-              <Grid.Row style={{padding:"20px 18px"}}>
-                <Image className='Rooms' src={RoomFour} />
+              <Grid.Row>
+                <Image className='Rooms' src={RoomFour} as={Link} to={ROUTES.SINGLEUNIT} />
+                <div className='Home-details'>
+                  <div class='Home-address'>
+                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                  </div>
+                  <Header className='Payment'>Ksh 450000</Header>
+                </div>
+                <Divider></Divider>
+                <Grid style={{ margin: "auto" }}>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={FullSize} />
+                      1520 ft
+                    </p>
+                  </Grid.Column>
+                </Grid>
+              </Grid.Row>
+            </Grid.Row>
+
+
+            <Grid.Row style={{marginTop:'25px',marginBottom:'25px'}}>
+
+              <Grid.Row>
+                <Image className='Rooms' src={RoomFour} as={Link} to={ROUTES.SINGLEUNIT} />
                 <div className='Home-details'>
                   <div class='Home-address'>
                     <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
@@ -501,8 +559,38 @@ const HomePage = () => {
                 </Grid>
               </Grid.Row>
 
-              <Grid.Row style={{padding:"20px 18px"}}>
-                <Image className='Rooms' src={RoomFour} />
+                <Grid.Row>
+                <Image className='Rooms' src={RoomFour} as={Link} to={ROUTES.SINGLEUNIT} />
+                <div className='Home-details'>
+                  <div class='Home-address'>
+                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
+                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
+                  </div>
+                  <Header className='Payment'>Ksh 450000</Header>
+                </div>
+                <Divider></Divider>
+                <Grid style={{ margin: "auto" }}>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
+                    </p>
+                  </Grid.Column>
+                  <Grid.Column width={5}>
+                    <p style={{ display: "flex" }}>
+                      <Image style={{ marginRight: "10px" }} src={FullSize} />
+                      1520 ft
+                    </p>
+                  </Grid.Column>
+                </Grid>
+                </Grid.Row>
+
+                <Grid.Row>
+                <Image className='Rooms' src={RoomFour}as={Link} to={ROUTES.SINGLEUNIT} />
                 <div className='Home-details'>
                   <div class='Home-address'>
                     <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
@@ -530,69 +618,10 @@ const HomePage = () => {
                   </Grid.Column>
                 </Grid>
               </Grid.Row>
+            </Grid.Row>
+          </Grid>
 
-              <Grid.Row style={{padding:"20px 18px"}}>
-                <Image className='Rooms' src={RoomFour} />
-                <div className='Home-details'>
-                  <div class='Home-address'>
-                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
-                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
-                  </div>
-                  <Header className='Payment'>Ksh 450000</Header>
-                </div>
-                <Divider></Divider>
-                <Grid style={{ margin: "auto" }}>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
-                    </p>
-                  </Grid.Column>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
-                    </p>
-                  </Grid.Column>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={FullSize} />
-                      1520 ft
-                    </p>
-                  </Grid.Column>
-                </Grid>
-              </Grid.Row>
-
-              <Grid.Row style={{padding:" 20px 18px"}}>
-                <Image className='Rooms' src={RoomFour} />
-                <div className='Home-details'>
-                  <div class='Home-address'>
-                    <p style={{ marginBottom: "5px" }}>James Gichuru Road</p>
-                    <Header style={{ marginTop: "5px" }}>Lavington</Header>
-                  </div>
-                  <Header className='Payment'>Ksh 450000</Header>
-                </div>
-                <Divider></Divider>
-                <Grid style={{ margin: "auto" }}>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={Bathrooms} />2
-                    </p>
-                  </Grid.Column>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={Bedroom} />3
-                    </p>
-                  </Grid.Column>
-                  <Grid.Column width={5}>
-                    <p style={{ display: "flex" }}>
-                      <Image style={{ marginRight: "10px" }} src={FullSize} />
-                      1520 ft
-                    </p>
-                  </Grid.Column>
-                </Grid>
-              </Grid.Row>
-
-
-              <div className="mainNavigation">
+         <div className="mainNavigation">
             <div className='navigationNumbers'>
             <Image src={leftArrow}/>
             <p>1</p>
@@ -602,10 +631,9 @@ const HomePage = () => {
             <Image src={rightArrow}/>
           </div>
          </div>
-            </Grid>
-        </Grid.Row>
-        </Grid>
-     </Responsive>
+        </div>
+      </div>
+      </Responsive>
      
     </div>
   );

@@ -2,6 +2,7 @@
 
 
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import './NavBar.scss'
 import {
       Container,
@@ -18,9 +19,6 @@ import {
 import * as ROLES from "../../constants/roles";
 import * as ROUTES from "../../constants/routes";
 import homelogo from '../images/home-run (1).png';
-import {
-    Link
-} from 'react-router-dom';
 import SignOutButton from "../SignOut";
 
 
@@ -150,6 +148,8 @@ const NoAuthNavigation = ({ activeItem, handleItemClick, clickHandler }) => {
                               name='Buy'
                               active={activeItem === 'Buy'}
                               onClick={handleItemClick}
+                              as={Link}
+                              to={ROUTES.HOME}
                           />
                           <Menu.Item
                              name='Sell'

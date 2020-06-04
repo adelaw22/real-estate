@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NavBar2 from "../Navbar2";
+import AppMap from "../AppMap";
 import {
   Container,
   Grid,
@@ -27,8 +28,6 @@ import Transport from "../images/Transport.png";
 import HealthCare from "../images/hospital.png";
 import Entertainment from "../images/Entertainment.png";
 import FullSize from "../images/Rectangle 11.png";
-import SmallMap from "../images/Rectangle 25.png";
-import BiggerMap from "../images/map 1.png";
 
 export class SingleUnit extends Component {
   render() {
@@ -146,56 +145,61 @@ export class SingleUnit extends Component {
                   marginLeft: "60px"
                 }}
               >
-                <div className='AgentProfile'>
-                  <div className='profilePicture'></div> <p> Agent </p>
-                  <Header> Jane Doe </Header>
-                  <Button
-                    secondary
-                    style={{
-                      display: "flex",
-                      marginTop: "40px"
-                    }}
-                  >
-                    <p
+                <Grid.Row style={{ marginBottom: "16px" }}>
+                  <div className='AgentProfile'>
+                    <div className='profilePicture'></div> <p> Agent </p>
+                    <Header> Jane Doe </Header>
+                    <Button
+                      secondary
                       style={{
-                        marginTop: "3px",
-                        marginBottom: "5px"
+                        display: "flex",
+                        marginTop: "40px"
                       }}
                     >
-                      {" "}
-                      +544 7 ** * ** *
-                    </p>
-                    <p
+                      <p
+                        style={{
+                          marginTop: "3px",
+                          marginBottom: "5px"
+                        }}
+                      >
+                        {" "}
+                        +544 7 ** * ** *
+                      </p>
+                      <p
+                        style={{
+                          color: "#fff",
+                          textDecoration: "underline",
+                          marginTop: "3px",
+                          marginLeft: "10px",
+                          marginBottom: "5px"
+                        }}
+                      >
+                        Show Number
+                      </p>
+                    </Button>
+                    <Button
+                      primary
                       style={{
-                        color: "#fff",
-                        textDecoration: "underline",
-                        marginTop: "3px",
-                        marginLeft: "10px",
-                        marginBottom: "5px"
+                        display: "flex",
+                        marginTop: "18px"
                       }}
                     >
-                      Show Number
-                    </p>
-                  </Button>
-                  <Button
-                    primary
-                    style={{
-                      display: "flex",
-                      marginTop: "18px"
-                    }}
-                  >
-                    Contact Agent{" "}
-                    <Image
-                      src={EmailContact}
-                      style={{
-                        marginLeft: "72px"
-                      }}
-                    />
-                  </Button>
-                </div>
-                <div className='Map-sec'>
-                  <Image src={SmallMap} />
-                </div>
+                      Contact Agent{" "}
+                      <Image
+                        src={EmailContact}
+                        style={{
+                          marginLeft: "72px"
+                        }}
+                      />
+                    </Button>
+                  </div>
+                </Grid.Row>
+
+                <Grid.Row style={{ paddingTop: "30px" }}>
+                  <div className='Map-sec'>
+                    <AppMap />
+                  </div>
+                </Grid.Row>
               </Grid.Column>
             </Grid>
           </Responsive>
@@ -342,7 +346,7 @@ export class SingleUnit extends Component {
 
                 <Grid.Row>
                   <div className='Map-sec'>
-                    <Image src={SmallMap} />
+                    <AppMap class='smallMap' />
                   </div>
                 </Grid.Row>
               </Grid>
@@ -394,7 +398,7 @@ export class SingleUnit extends Component {
           </Responsive>
 
           <div className='biggerMap'>
-            <Image src={BiggerMap} />
+            <AppMap/>
           </div>
 
           <div className='similarHomes'>

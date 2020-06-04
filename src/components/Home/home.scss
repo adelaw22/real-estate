@@ -8,154 +8,174 @@ $mq-breakpoints: (mobile: 320px,
   desktopAd: 810px,
   mobileLandscape: 480px);
 
-
 .HomePage {
   width: 100%;
   height: auto;
 
-  .ui.grid {
+  .homeBody {
     width: 100%;
     height: auto;
-    display: flex !important;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
 
+    .filterSec {
+      padding: 30px 26px;
+      float: left;
+      width: 25%;
 
-    .filter-tab {
-      width: 90%;
-      margin: 10px auto;
-      height: auto;
-
-      .filterHeader {
+      .filter-tab {
         width: 100%;
         height: auto;
+
+
+        .filterHeader {
+          width: 100%;
+          height: auto;
+          padding-bottom: 20px;
+          padding-top: 20px;
+
+          .ui.header {
+            float: left;
+            margin-bottom: 0px;
+          }
+
+          .reset {
+            float: right;
+          }
+        }
+      }
+    }
+
+    .roomSamples {
+      float: right;
+      width: 75%;
+
+      .showResults {
+        width: 100%;
+        height: auto;
+        background: #f8f8f8;
+        padding-top: 28px;
         padding-bottom: 20px;
-        padding-top: 20px;
+        padding-left: 45px;
+        padding-right: 45px;
+        margin-bottom: 25px;
+        display: flex;
 
         .ui.header {
-          float: left;
-          margin-bottom: 0px;
+          margin: auto 0px;
+          width: 80%;
         }
 
-        .reset {
-          float: right;
+        .ui.form {
+          width: 20%;
+        }
+      }
 
+      .ui.grid {
+        width: 100%;
+        margin: 0px;
+        display: flex !important;
+
+        .ui.image.Rooms {
+          border: 3px solid #1149b6;
+          border-radius: 20px;
+          margin: auto;
+        }
+
+        .Home-details {
+          margin-top: 20px;
+          height: 45px;
+
+          .Home-address {
+            float: left;
+            margin-left: 9px;
+          }
+
+          .ui.header.Payment {
+            float: right;
+            margin-right: 9px;
+            margin-top: 0px;
+            color: #1149b6;
+          }
+        }
+
+        .ui.divider {
+          border-top: 2px solid rgba(34, 36, 38, 0.15);
+          border-bottom: 2px solid rgba(34, 36, 38, 0.15);
+          width: 85%;
+          margin: 20px auto;
+        }
+      }
+
+      .mainNavigation {
+        margin: 20px 0px;
+        height: auto;
+        width: 100%;
+
+        .navigationNumbers {
+          width: 25%;
+          margin: auto;
+          display: flex;
+
+          p {
+            margin: 10px 20px;
+            font-size: 18px;
+          }
+
+          .ui.image {
+            margin: auto;
+          }
         }
       }
     }
+  }
 
-    .showResults {
-      width: 100%;
-      height: auto;
-
-      background: #f8f8f8;
-      padding-top: 28px;
-      padding-bottom: 20px;
-      padding-left: 45px;
-      padding-right: 45px;
-      margin-bottom: 25px;
-      display: flex;
-
-      .ui.header {
-        margin: auto 0px;
-        width: 80%;
+  @include mq($from: mobile, $until: tablet) {
+    .homeBody {
+      .filterSec {
+        float: none;
+        padding: 30px 16px
       }
 
-      .ui.form {
-        width: 20%;
+      .roomSamples {
+        float: none;
+
+        .showResults {
+          padding: 20px 16px;
+
+          .ui.header {
+            width: 50%;
+            font-size: 18px;
+            margin-right: 20px;
+          }
+
+          .ui.form {
+            width: 40%;
+          }
+        }
+
+        .ui.grid {
+          display: block !important;
+        }
+
+        .mainNavigation {
+          .navigationNumbers {
+            width: 60%;
+          }
+        }
       }
-
-
     }
+  }
 
-    .ui.image.Rooms {
-      border: 3px solid #1149b6;
-      border-radius: 20px;
-      margin: auto;
-    }
+  @include mq(tablet) {
 
-    .Home-details {
-      margin-top: 20px;
-      height: 45px;
 
+    .roomSamples {
       .Home-address {
-        float: left;
-        margin-left: 9px;
+        float: none;
       }
 
       .ui.header.Payment {
-        float: right;
-        margin-right: 9px;
-        margin-top: 0px;
-        color: #1149b6;
-      }
-    }
-
-    .ui.divider {
-      border-top: 2px solid rgba(34, 36, 38, 0.15);
-      border-bottom: 2px solid rgba(34, 36, 38, 0.15);
-      width: 85%;
-      margin: 20px auto;
-    }
-
-    .mainNavigation {
-      margin: 20px 0px;
-      height: auto;
-      width: 100%;
-
-      .navigationNumbers {
-        width: 25%;
-        margin: auto;
-        display: flex;
-
-        p {
-          margin: 10px 20px;
-          font-size: 18px
-        }
-
-        .ui.image {
-          margin:auto;
-        }
-      }
-
-
-
-
-
-    }
-  }
-  @include mq ($from:mobile, $until: tablet){
-    .ui.grid{
-      .showResults{
-        padding:20px 18px;
-        .ui.header{
-          width:50%;
-          font-size:16px;
-        }
-        .ui.form{
-          width:50%;
-        }
-      }
-      .Home-details{
-        width:85%;
-        .Home-address{
-          margin-left:0pc
-        }
-        .ui.header.Payment{
-          margin-right:0px;
-        }
-      }
-      .ui.divider{
-       width:85%;
-      }
-      .mainNavigation{
-        .navigationNumbers{
-          width:90%;
-          .ui.image{
-            margin:auto;
-          }
-        }
+        float: none;
+        margin-left: 9px;
       }
     }
   }

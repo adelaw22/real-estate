@@ -12,6 +12,8 @@
     "css-loader": "^3.5.3",
     "express": "^4.17.1",
     "firebase": "^7.14.0",
+    "google-map-react": "^1.1.7",
+    "google-maps-react": "^2.0.6",
     "less": "^3.11.1",
     "less-loader": "^6.0.0",
     "node-sass": "^4.13.1",
@@ -38,7 +40,8 @@
     "eject": "craco eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "parser": "babel-eslint"
   },
   "browserslist": {
     "production": [
@@ -55,6 +58,7 @@
   "devDependencies": {
     "@craco/craco": "^5.6.4",
     "@semantic-ui-react/craco-less": "^1.2.1",
+    "eslint": "^7.1.0",
     "semantic-ui-less": "^2.4.1"
   }
 }

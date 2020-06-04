@@ -193,6 +193,7 @@ const LandingPage = () => {
           <Responsive minWidth={320} maxWidth={767}>
             <Grid container rows={3}>
               <Grid.Row className='gridContent' style={{ margin: "auto" }}>
+                
                 <Image src={vector1} />
                 <Header>Easier</Header>
                 <p>

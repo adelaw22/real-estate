@@ -263,7 +263,7 @@ const SignInFormBase = props => {
     Link
   }
   to = {
-      ROUTES.SINGLEUNIT
+      ROUTES.HOME
     } >
     Sign In {
       " "
