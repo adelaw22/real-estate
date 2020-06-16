@@ -19,6 +19,8 @@ import vector1 from "../images/Group 308.png";
 import vector2 from "../images/Group 307.png";
 import vector3 from "../images/Group 306.png";
 import Avatar from "../images/Media Person.png";
+import { Link } from "react-router-dom";
+import * as ROUTES from "../../constants/routes";
 
 const LandingPage = () => {
   const [sideBarOpen, setsideBarOpen] = useState(false);
@@ -45,7 +47,7 @@ const LandingPage = () => {
               You can get all the best deals for units for renting, buying and
               sell all under one roof
             </p>
-            <Button content='Secondary'>Get Started</Button>
+            <Button content='Secondary' as={Link} to={ROUTES.SIGN_IN}>Get Started</Button>
           </div>
         </Container>
       </div>
@@ -283,7 +285,7 @@ const LandingPage = () => {
           Find your next client fast and easy by posting your new home and
           allowing clients find you
         </p>
-        <Button content='Secondary'>Start free trial</Button>
+        <Button content='Secondary' as={Link} to={ROUTES.SIGN_UP}>Start free trial</Button>
       </div>
     </div>
   );

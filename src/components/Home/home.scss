@@ -154,6 +154,11 @@ $mq-breakpoints: (mobile: 320px,
 
         .ui.grid {
           display: block !important;
+
+          .ui.image.Rooms {
+            width: 85%;
+            display: block;
+          }
         }
 
         .mainNavigation {

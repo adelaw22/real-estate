@@ -3,3 +3,8 @@
 [0515/194532.291:ERROR:settings.cc(320)] Settings magic is not 1129342067
 [0525/201115.954:ERROR:settings.cc(320)] Settings magic is not 1129342067
 [0601/235818.586:ERROR:settings.cc(320)] Settings magic is not 1129342067
+[0608/153756.108:ERROR:settings.cc(320)] Settings magic is not 1129342067
+[0612/105305.391:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: The operation completed successfully. (0x0)
+[0612/141623.599:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: The operation completed successfully. (0x0)
+[0615/111741.439:ERROR:settings.cc(320)] Settings magic is not 1129342067
+[0616/155507.530:ERROR:settings.cc(320)] Settings magic is not 1129342067

@@ -1,0 +1,103 @@
+@import "~sass-mq";
+
+@function px-to-rem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+$mq-responsive: true;
+$mq-breakpoints: (mobile: 320px,
+  tablet: 740px,
+  desktop: 980px,
+  wide: 1300px,
+  // Tweakpoints
+  desktopAd: 810px,
+  mobileLandscape: 480px);
+
+.generalPage {
+  width: 100%;
+  height: auto;
+  background: #f8f8f8;
+
+  // .menuContainer {
+  //     margin: px-to-rem(30px);
+  .ui.header {
+    padding-top: 2.125em;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 24px;
+    color: #1149b6;
+  }
+
+  .ui.form {
+    margin-top: 30px;
+    display: flex;
+
+    .ui.segment {
+      width: 90%;
+      line-height: px-to-rem(40px);
+
+      .topLabel {
+        font-size: 16px;
+        padding: 16px 5px;
+      }
+    }
+
+
+    .ui.label {
+      font-size: 16px;
+      color: #000000;
+      background-color: transparent;
+    }
+
+    .radioContainer {
+      margin-top: 20px;
+      width: 85%;
+    }
+
+    .RadioSegment {
+      margin: 0px 60px 20px 9px;
+      background: rgba(25, 118, 210, 0.2);
+      text-align: center;
+      padding: 16px 14px;
+    }
+
+    .radioButtons {
+      min-width: px-to-rem(30px);
+      margin-left: 50px;
+    }
+
+    .ui.input {
+      height: 50px;
+      width: 90%;
+      background: rgba(26, 137, 239, 0.2);
+      border-radius: 5px;
+    }
+
+    .inputinfo {
+      @extend .ui.input;
+    }
+
+    .selctOption {
+      min-width: px-to-rem(250px);
+    }
+
+    textarea {
+      // margin: px-to-rem(45px);
+      text-align: center;
+      background: rgba(26, 137, 239, 0.2);
+    }
+
+    .ui.button {
+      background: #1149b6;
+      font-size: 20px;
+      color: #ffffff;
+    }
+
+    .ButtonContainer {
+      margin-top: px-to-rem(50px);
+    }
+  }
+}
+
+// <Button onClick={(event) => (window.location.href = "/UnitAdd")}>

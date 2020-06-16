@@ -1,0 +1,141 @@
+@import "~sass-mq";
+$mq-responsive: true;
+$mq-breakpoints: (mobile: 320px,
+    tablet: 740px,
+    desktop: 980px,
+    wide: 1300px,
+    // Tweakpoints
+    desktopAd: 810px,
+    mobileLandscape: 480px);
+
+.detailsPage {
+    width: auto;
+    height: auto;
+
+    .ui.container {
+        .ui.header {
+            padding-top: 30px;
+
+            font-style: italic;
+            font-weight: 600;
+            font-size: 24px;
+            color: #1976d2;
+        }
+
+        .ui.form {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+
+            .ui.segment {
+                width: 100%;
+                padding: 0px;
+                line-height: 40px;
+
+                input {
+                    margin-bottom: 30px;
+                    height: 50px;
+                    background: rgba(26, 137, 239, 0.2);
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    margin-right: 50px;
+                    width: 90%;
+                }
+
+                .labelSec {
+                    font-weight: bold;
+                    font-size: 16px;
+                    color: #000000;
+
+                }
+            }
+
+            .Amenities {
+                font-weight: bold;
+                font-size: 16px;
+                color: #000000;
+
+            }
+
+            .checkButtonContainer {
+                display: flex;
+                width: 100%;
+                height: auto;
+                line-height: 50px;
+
+                .BoxGrid {
+                    display: flex;
+                    width: 50%;
+
+                    .checkBoxRow {
+                        width: 40%;
+                        margin-right: 50px;
+
+                        .ui.checkbox {
+                            padding: 20px;
+                        }
+                    }
+                }
+            }
+
+            .tagsContainer {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 95%;
+
+                .AddTag {
+                    font-weight: bold;
+                    font-size: 16px;
+                    color: #000000;
+
+                }
+
+                .selctOption {
+                    width: 100%;
+                    min-width: 200px;
+                }
+
+            }
+
+            .ButtonContainer {
+                margin: 40px 0px;
+                width: 95%;
+                height: 50px;
+
+                .nextButton {
+                    background: #1149b6;
+                    font-size: 20px;
+                    color: #ffffff
+                }
+
+                .backButton {
+                    font-size: 20px;
+                    color: #ffffff
+                }
+            }
+        }
+
+        .AmenitiesContainer {
+            color: red;
+        }
+    }
+
+    @include mq($from: mobile, $until: tablet) {
+        .ui.container {
+            .ui.form {
+                .checkButtonContainer {
+                    display: block;
+
+                    .BoxGrid {
+                        width: 100%;
+
+                        .checkBoxRow {
+                            width: 50%;
+                            margin-right: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

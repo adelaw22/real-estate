@@ -77,17 +77,20 @@ const SignInPage = () => {
       8
     }
     largeScreen = {
-      2
+      6
     }
     computer = {
       6
+    }
+    style = {
+      {
+        marginTop: "28px"
+      }
     } >
     <
     Header as = 'h3'
     textAlign = 'center' >
-    Sign In {
-      " "
-    } <
+    Sign In <
     /Header> <
     Divider / >
     <
@@ -102,11 +105,9 @@ const SignInPage = () => {
     name = {
       "Sign Up"
     }
-    />{" "} < /
-    Grid.Column > {
-      " "
-    } <
-    /Grid>{" "} < /
+    /> < /
+    Grid.Column > <
+    /Grid> < /
     Container > <
     /div>
   );
@@ -171,8 +172,6 @@ const SignInFormBase = props => {
 
   return ( <
       div > {
-        " "
-      } {
         error.length > 0 ? ( <
           Message error header = 'Sorry Login failed'
           content = {
@@ -182,8 +181,6 @@ const SignInFormBase = props => {
         ) : (
           ""
         )
-      } {
-        " "
       } <
       Form onSubmit = {
         handleSubmit(onSubmit)
@@ -191,7 +188,7 @@ const SignInFormBase = props => {
       <
       Form.Field required >
       <
-      label > Email < /label>{" "} <
+      label > Email < /label> <
       input name = 'email'
       onChange = {
         onChange
@@ -220,13 +217,11 @@ const SignInFormBase = props => {
             errors.email.message
           } < /small>
         )
-      } {
-        " "
       } <
-      /Form.Field>{" "} <
+      /Form.Field> <
       Form.Field required >
       <
-      label > Password < /label>{" "} <
+      label > Password < /label> <
       input name = 'password'
       onChange = {
         onChange
@@ -251,8 +246,6 @@ const SignInFormBase = props => {
           errors.password.message
         } < /small>
       )
-    } {
-      " "
     } <
     /Form.Field> <
   Button loading = {
@@ -265,13 +258,11 @@ const SignInFormBase = props => {
   to = {
       ROUTES.HOME
     } >
-    Sign In {
-      " "
-    } <
-    /Button>{" "} <
+    Sign In <
+    /Button> <
   SignInGoogleBase / >
     <
-    /Form>{" "} < /
+    /Form> < /
   div >
 );
 };

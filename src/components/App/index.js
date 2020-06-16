@@ -15,7 +15,12 @@ import AdminPage from "../Admin";
 import PasswordChangePage from "../PasswordChange";
 import Error404 from "../Error404";
 import Pricing from "../Pricing"
-import LandlordPricing from "../LandlordPricing"
+import LandlordPricing from "../LandlordPricing";
+import UnitGeneral from "../UnitAddGeneral";
+import UnitLocation from "../UnitAddLocation";
+import UnitDetails from "../UnitAddDetails";
+import UnitGallery from "../UnitAddGallery";
+import UnitCom from "../UnitAddCommercial";
 
 import * as ROUTES from "../../constants/routes";
 
@@ -121,6 +126,46 @@ const App = () => {
     }
     component = {
       Pricing
+    }
+    exact / >
+    <
+    Route path = {
+      ROUTES.UNITGENERAL
+    }
+    component = {
+      UnitGeneral
+    }
+    exact / >
+    <
+    Route path = {
+      ROUTES.UNITGALLERY
+    }
+    component = {
+      UnitGallery
+    }
+    exact / >
+    <
+    Route path = {
+      ROUTES.UNITLOCATION
+    }
+    component = {
+      UnitLocation
+    }
+    exact / >
+    <
+    Route path = {
+      ROUTES.UNITDETAILS
+    }
+    component = {
+      UnitDetails
+    }
+    exact / >
+    <
+    Route path = {
+      ROUTES.UNITCOM
+    }
+    component = {
+      UnitCom
     }
     exact / >
     <

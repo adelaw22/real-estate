@@ -50,7 +50,7 @@ const SignUpPage = () => {
              />
             <Container>
             <Grid columns={1} centered>
-                <Grid.Column mobile={16} tablet={8} largeScreen={2} computer={6}>
+                <Grid.Column mobile={16} tablet={8} largeScreen={6} computer={6} style={{marginTop:'28px'}}>
 
                     <Header as='h3' textAlign='center'>
                         Sign Up

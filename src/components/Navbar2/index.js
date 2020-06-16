@@ -173,7 +173,8 @@ const NoAuthNavigation = ({ activeItem, handleItemClick, clickHandler }) => {
                              as={Link}
                              >
             
-                             <Button primary>Add Listing</Button>
+                             <Button primary  as={Link}
+                              to={ROUTES.UNITGENERAL}>Add Listing</Button>
                           </Menu.Item>
                           </Menu.Menu>
                        
