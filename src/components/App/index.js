@@ -21,6 +21,9 @@ import UnitLocation from "../UnitAddLocation";
 import UnitDetails from "../UnitAddDetails";
 import UnitGallery from "../UnitAddGallery";
 import UnitCom from "../UnitAddCommercial";
+import BuyPage from "../BuyPage";
+import BuyPage2 from "../BuyPage2";
+import BuyPage3 from "../BuyPage3"
 
 import * as ROUTES from "../../constants/routes";
 
@@ -118,6 +121,30 @@ const App = () => {
     }
     component = {
       SingleUnit
+    }
+    exact / >
+    <
+    Route path = {
+      ROUTES.BUYPAGE
+    }
+    component = {
+      BuyPage
+    }
+    exact / >
+    <
+    Route path = {
+      ROUTES.BUYPAGE2
+    }
+    component = {
+      BuyPage2
+    }
+    exact / >
+    <
+    Route path = {
+      ROUTES.BUYPAGE3
+    }
+    component = {
+      BuyPage3
     }
     exact / >
     <

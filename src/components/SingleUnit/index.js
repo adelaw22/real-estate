@@ -139,6 +139,7 @@ export class SingleUnit extends Component {
                   </Grid.Column>
                 </Grid>
               </Grid.Column>
+
               <Grid.Column
                 width={5}
                 style={{
@@ -398,7 +399,7 @@ export class SingleUnit extends Component {
           </Responsive>
 
           <div className='biggerMap'>
-            <AppMap/>
+            <AppMap />
           </div>
 
           <div className='similarHomes'>

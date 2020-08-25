@@ -1,0 +1,291 @@
+@import "~sass-mq";
+
+$mq-breakpoints: (mobile: 320px,
+  tablet: 768px,
+  desktop: 980px,
+  wide: 1300px,
+  // Tweakpoints
+  desktopAd: 810px,
+  mobileLandscape: 480px);
+
+.BuyPage {
+  width: 100%;
+  height: auto;
+
+  .topSec {
+    background: url("../images/bg1.png") no-repeat center;
+    width: 100%;
+    height: auto;
+
+    .ui.container {
+      padding: 80px 30px 30px 30px;
+      text-align: center;
+      height: auto;
+
+      .ui.header {
+        font-size: 3.25em;
+        color: white;
+      }
+
+      p {
+        font-size: 20px;
+        color: white;
+        width: 50%;
+        margin: auto;
+      }
+
+      .SearchInput {
+        width: 90%;
+        margin: 80px auto 30px auto;
+
+        .ui.dropdown {
+          font-size: 20px;
+          background: white;
+          color: black;
+          margin-right: 24px;
+          border-radius: 7px;
+        }
+
+        .ui.input {
+          margin-right: 30px;
+          border-radius: 7px;
+          width: 480px;
+        }
+
+        .ui.button {
+          font-size: 20px;
+          border-radius: 7px;
+        }
+      }
+    }
+  }
+
+  .featuredProperties {
+    width: 100%;
+    height: auto;
+    padding: 30px 20px;
+    text-align: center;
+
+    .ui.header {
+      color: #1149b6;
+      font-size: 22px;
+      margin-top: 10px;
+      margin-bottom: 8px;
+    }
+
+    .specialText {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .trendingProject {
+    width: 100%;
+    height: auto;
+    padding: 30px 20px;
+    text-align: center;
+
+    .ui.header {
+      color: #1149b6;
+      font-size: 22px;
+      margin-top: 10px;
+      margin-bottom: 8px;
+    }
+
+    .specialText {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .ui.grid {
+    width: 100%;
+    margin: 36px 0px 30px 0px;
+    display: flex !important;
+
+    .cardLike {
+      width: 90%;
+      height: 407px;
+      margin: auto;
+      border-radius: 20px;
+      background-color: #f8f3f3;
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+
+      .propertyDetails {
+        width: 100%;
+        height: 180px;
+        padding: 20px 0px 0px 0px;
+
+        .leftDetails {
+          float: left;
+          width: 70%;
+          height: auto;
+          text-align: left;
+          padding-left: 10px;
+
+          .PropertyName {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 12px;
+          }
+
+          .propertyLocation {
+            margin-top: 20px;
+          }
+        }
+
+        .rightDetails {
+          float: right;
+          width: 30%;
+          height: auto;
+          text-align: left;
+          padding-left: 22px;
+
+          .priceTag {
+            font-size: 15px;
+            font-weight: 700;
+          }
+
+          .propertyStatus {
+            color: red;
+          }
+
+          .detailsbtn {
+            border-radius: 50px;
+            font-size: 9px;
+            font-weight: 500;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .moreLink {
+    width: 85%;
+    margin: auto;
+    text-align: center;
+
+    p {
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+
+    .ui.divider {
+      width: 150px;
+      margin: 8px auto;
+      border-top: 3px solid rgba(29, 30, 30, 0.15);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .localities {
+    width: 100%;
+    height: auto;
+    padding: 26px 20px;
+    background-color: rgba(29, 30, 30, 0.15);
+
+    .Heading {
+      width: 36%;
+      color: #1149b6;
+      font-size: 26px;
+      margin: 10px auto 8px auto;
+    }
+
+    .ui.grid {
+      width: 100%;
+
+      .ui.divider {
+        width: 75%;
+        margin: 5px auto 16px auto;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @include mq($from: mobile, $until: tablet) {
+    .topSec {
+      .ui.container {
+        padding: 0px 0px 30px 0px;
+
+        .ui.header {
+          padding: 60px 0px 14px 0px;
+          margin: 0px;
+          font-size: 36px;
+        }
+
+        p {
+          font-size: 16px;
+          width: 90%;
+        }
+
+        .SearchInput {
+          margin: 30px auto;
+          width: 95%;
+
+          .ui.dropdown {
+            display: none;
+          }
+
+          .ui.input {
+            width: 300px;
+            margin: 0px 0px 12px 0px;
+
+          }
+
+          .ui.button {
+            font-size: 18px;
+          }
+        }
+
+      }
+    }
+
+    .featuredProperties {
+      .ui.header {
+        font-size: 20px;
+      }
+
+      .specialText {
+        font-size: 22px;
+      }
+    }
+
+    .trendingProject {
+      .ui.header {
+        font-size: 20px;
+      }
+
+      .specialText {
+        font-size: 22px;
+
+      }
+    }
+
+    .ui.grid {
+      .cardLike {
+        width: 93%;
+      }
+    }
+
+    .moreLink {
+      p {
+        font-size: 24px;
+      }
+    }
+
+    .localities {
+      .Heading {
+        width: 100%;
+        font-size: 24px;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.centered-icon {
+  padding: 0.75em;
+}
+
+.ui.menu {
+  margin: 0;
+}
+
+.ui.menu .active.item {
+  background-color: white;
+}
+
+.ui.menu .item::before {
+  width: 0;
+}
+/*# sourceMappingURL=RentNav.css.map */

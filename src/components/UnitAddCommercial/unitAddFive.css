@@ -1,0 +1,75 @@
+.Commercials {
+  width: 100%;
+  height: auto;
+}
+
+.Commercials .ui.container .ui.header {
+  padding-top: 30px;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 24px;
+  color: #1976d2;
+}
+
+.Commercials .ui.container .ui.form {
+  margin-top: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Commercials .ui.container .ui.form .ui.label {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 25px;
+  color: #000000;
+  background-color: transparent;
+  padding: 10px 10px 10px 0px;
+}
+
+.Commercials .ui.container .ui.form input {
+  height: 60px;
+  background: rgba(26, 137, 239, 0.2);
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.Commercials .ui.container .ui.form .checkBoxField {
+  height: 40px;
+  margin: auto 0px;
+}
+
+.Commercials .ui.container .ui.form .checkBoxField input {
+  height: 30px;
+  margin-right: 5px;
+  background: rgba(26, 137, 239, 0.2);
+}
+
+.Commercials .ui.container .ui.form .checkBoxField .ui.label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000000;
+  background-color: transparent;
+}
+
+.Commercials .ui.container .ui.form .ListingSegment {
+  width: 100%;
+  padding: 0px;
+}
+
+.Commercials .ui.container .ui.form .ButtonContainer {
+  margin: 40px auto;
+  height: 50px;
+}
+
+.Commercials .ui.container .ui.form .ButtonContainer .nextButton {
+  background: #1149b6;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.Commercials .ui.container .ui.form .ButtonContainer .backButton {
+  font-size: 20px;
+  color: #ffffff;
+}
+/*# sourceMappingURL=unitAddFive.css.map */

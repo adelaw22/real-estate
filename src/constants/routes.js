@@ -16,3 +16,6 @@ export const UNITCOM = "/commercials";
 export const UNITDETAILS = "/details";
 export const UNITLOCATION = "/location";
 export const UNITGENERAL = "/general";
+export const BUYPAGE = "/buy-page";
+export const BUYPAGE2 = "/buy-page2";
+export const BUYPAGE3 = "/buy-page3"

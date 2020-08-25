@@ -1,0 +1,70 @@
+.Gallery {
+  width: 100%;
+  height: auto;
+}
+
+.Gallery .ui.header {
+  padding-top: 30px;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 24px;
+  color: #1976d2;
+}
+
+.Gallery .ui.form {
+  margin-top: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Gallery .ui.form .ui.segment {
+  width: 100%;
+  line-height: 40px;
+  padding: 0px;
+}
+
+.Gallery .ui.form .ui.segment .ui.label {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 33px;
+  color: #000000;
+  background-color: transparent;
+  padding: 14px 0px 10px 0px;
+}
+
+.Gallery .ui.form .ui.segment .eachInput {
+  margin-bottom: 30px;
+}
+
+.Gallery .ui.form .ui.segment .eachInput input {
+  width: 95%;
+  height: 100px;
+  background-color: rgba(90, 148, 196, 0.2);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 7px;
+}
+
+.Gallery .ui.form .ui.segment .eachInput p {
+  color: red;
+  font-weight: normal;
+}
+
+.Gallery .ui.form .ui.segment .ButtonContainer {
+  margin: 40px 0px;
+  width: 95%;
+  height: 50px;
+}
+
+.Gallery .ui.form .ui.segment .ButtonContainer .nextButton {
+  background: #1149b6;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.Gallery .ui.form .ui.segment .ButtonContainer .backButton {
+  font-size: 20px;
+  color: #ffffff;
+}
+/*# sourceMappingURL=unitGallery.css.map */

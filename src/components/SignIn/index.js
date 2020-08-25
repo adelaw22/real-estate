@@ -256,7 +256,7 @@ const SignInFormBase = props => {
     Link
   }
   to = {
-      ROUTES.HOME
+      ROUTES.BUYPAGE
     } >
     Sign In <
     /Button> <
