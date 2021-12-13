@@ -1,7 +1,6 @@
 //The main pricing page
 
 import React from "react";
-import NavBar2 from "../Navbar2";
 import "./pricing.scss";
 import {
   Header,
@@ -18,7 +17,6 @@ import priceTag1 from "../images/price-tag2.png";
 const Pricing = () => {
   return (
     <div className='pricePage'>
-      <NavBar2 />
       <div className='priceSec'>
         <Container>
           <Header className='top-header'>Pricing</Header>

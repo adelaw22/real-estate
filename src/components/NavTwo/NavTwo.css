@@ -1,0 +1,33 @@
+.centered-icon {
+  padding: 0.75em;
+}
+
+.ui.secondary.pointing.menu {
+  height: 70px;
+  padding: 0px;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.308) !important;
+}
+
+.ui.secondary.pointing.menu .active.item {
+  background-color: transparent !important;
+  border-bottom-color: #1149b6;
+}
+
+.ui.secondary.pointing.menu .active.item:hover {
+  border-bottom-color: #1149b6;
+}
+
+.ui.secondary.pointing.menu .item {
+  padding: 0px;
+  line-height: 2;
+  margin: 20px 0px 0px 50px;
+}
+
+.ui.secondary.pointing.menu .item::before {
+  width: 0;
+}
+
+.ui.secondary.pointing.menu .item:hover {
+  border-bottom-color: #1149b6;
+}
+/*# sourceMappingURL=NavTwo.css.map */

@@ -1,0 +1,44 @@
+.centered-icon {
+  padding: 0.75em;
+}
+
+.ui.secondary.pointing.menu {
+  height: 70px;
+  padding: 0px;
+}
+
+.ui.secondary.pointing.menu .active.item {
+  background-color: transparent !important;
+  border-bottom-color: #1149b6;
+}
+
+.ui.secondary.pointing.menu .active.item:hover {
+  border-bottom-color: #1149b6;
+}
+
+.ui.secondary.pointing.menu .item {
+  padding: 0px;
+  line-height: 2;
+  margin: 20px 0px 0px 50px;
+}
+
+.ui.secondary.pointing.menu .item .ui.icon.input {
+  color: #1149b6 !important;
+}
+
+.ui.secondary.pointing.menu .item input {
+  border-radius: 10px;
+  background-color: rgba(177, 177, 177, 0.377);
+  border: none;
+  padding-right: 165px !important;
+  padding: 10px;
+}
+
+.ui.secondary.pointing.menu .item::before {
+  width: 0;
+}
+
+.ui.secondary.pointing.menu .item:hover {
+  border-bottom-color: #1149b6;
+}
+/*# sourceMappingURL=NavThree.css.map */

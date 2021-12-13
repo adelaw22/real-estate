@@ -1,0 +1,161 @@
+.Details {
+  width: 100%;
+  height: auto;
+}
+
+.Details .ui.header {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.Details .profileSection {
+  width: 50%;
+  height: auto;
+  margin: 30px auto;
+}
+
+.Details .profileSection .ui.tabular.menu {
+  height: 50px;
+  border: none;
+}
+
+.Details .profileSection .ui.tabular.menu .active.item {
+  background-color: #efefef !important;
+}
+
+.Details .profileSection .ui.tabular.menu .item {
+  width: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 13px 13px 0px 0px !important;
+  border: none;
+}
+
+.Details .profileSection .ui.segment {
+  height: 620px;
+  border-radius: 0px 0px 10px 10px;
+  border: none;
+  background-color: #efefef;
+  padding: 50px 0px 30px 0px;
+}
+
+.Details .profileSection .ui.segment .profile-section {
+  width: 50%;
+  margin: auto;
+}
+
+.Details .profileSection .ui.segment .profile-section .profileImg {
+  width: 80%;
+  text-align: center;
+  margin: 0px auto 16px auto;
+}
+
+.Details .profileSection .ui.segment .profile-section .profileImg .ui.image {
+  margin: 0px auto 10px auto;
+}
+
+.Details .profileSection .ui.segment .profile-section .profileImg p {
+  font-weight: 600;
+}
+
+.Details .profileSection .ui.segment .profile-section .ui.form input {
+  border: none;
+}
+
+.Details .profileSection .ui.segment .profile-section .ui.form input::-webkit-input-placeholder {
+  color: #555555;
+}
+
+.Details .profileSection .ui.segment .profile-section .ui.form input:-ms-input-placeholder {
+  color: #555555;
+}
+
+.Details .profileSection .ui.segment .profile-section .ui.form input::-ms-input-placeholder {
+  color: #555555;
+}
+
+.Details .profileSection .ui.segment .profile-section .ui.form input::placeholder {
+  color: #555555;
+}
+
+.Details .profileSection .ui.segment .profile-section .ui.button {
+  margin-top: 26px;
+}
+
+.Details .profileSection .ui.segment .paymentForm {
+  width: 50%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.Details .profileSection .ui.segment .paymentForm .cardImages {
+  width: 60%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Details .profileSection .ui.segment .paymentForm .cardImages .ui.image {
+  margin: 14px;
+}
+
+.Details .profileSection .ui.segment .paymentForm .ui.form {
+  margin-top: 18px;
+}
+
+.Details .profileSection .ui.segment .paymentForm .ui.form input {
+  border: none;
+}
+
+.Details .profileSection .ui.segment .paymentForm .ui.form input::-webkit-input-placeholder {
+  color: #555555;
+}
+
+.Details .profileSection .ui.segment .paymentForm .ui.form input:-ms-input-placeholder {
+  color: #555555;
+}
+
+.Details .profileSection .ui.segment .paymentForm .ui.form input::-ms-input-placeholder {
+  color: #555555;
+}
+
+.Details .profileSection .ui.segment .paymentForm .ui.form input::placeholder {
+  color: #555555;
+}
+
+.Details .profileSection .ui.segment .paymentForm .Or-sec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px auto;
+  width: 80%;
+}
+
+.Details .profileSection .ui.segment .paymentForm .Or-sec p {
+  line-height: 2;
+  margin: auto 16px;
+}
+
+.Details .profileSection .ui.segment .paymentForm .Or-sec .ui.divider {
+  width: 40%;
+  border-top: 1px solid black !important;
+}
+
+.Details .profileSection .ui.segment .paymentForm .ui.button.saveBtn {
+  margin-top: 26px;
+}
+
+.Details .profileSection .ui.segment .paymentForm i.icon {
+  font-size: 16px;
+}
+
+.Details .profileSection .ui.segment .done-btn {
+  float: right;
+  margin: 100px 30px 0px 0px;
+  font-weight: normal;
+  border: 1px solid black;
+  background-color: #fff;
+}
+/*# sourceMappingURL=profileDetails.css.map */

@@ -1,0 +1,50 @@
+.centered-icon {
+    padding: 0.75em;
+}
+
+
+.ui.secondary.pointing.menu {
+    height: 70px;
+    padding: 0px;
+
+    .active.item {
+        background-color: transparent !important;
+        border-bottom-color: #1149b6;
+
+        &:hover{
+            border-bottom-color: #1149b6;
+        }
+    }
+
+    .item {
+        padding:0px;
+        line-height: 2;
+        margin: 20px 0px 0px 50px;
+
+        .ui.icon.input{
+            color: #1149b6 !important;
+        }
+        
+        input{
+            border-radius: 10px;
+            background-color: rgba(177, 177, 177, 0.377);
+            border: none;
+            padding-right:165px !important; 
+            padding:10px;
+           
+        }
+        
+        .Sign-btn {
+            background-color: #1149b6;
+            color: white;
+        }
+
+        &::before {
+            width: 0;
+        }
+
+        &:hover{
+            border-bottom-color: #1149b6;
+        }
+    }
+}

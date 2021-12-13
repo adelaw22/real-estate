@@ -1,0 +1,57 @@
+@import "~sass-mq";
+
+$mq-breakpoints: (mobile: 320px,
+  tablet: 768px,
+  desktop: 980px,
+  wide: 1300px,
+  // Tweakpoints
+  desktopAd: 810px,
+  mobileLandscape: 480px);
+
+.centered-icon {
+    padding: 0.75em;
+}
+
+.ui.secondary.pointing.menu {
+    padding:0px;
+    margin: 0px;
+    height: 70px;
+    background: transparent;
+    box-shadow: none !important;
+    border: none !important;
+
+
+
+    .active.item {
+        background-color:transparent !important;
+        border-bottom-color: #000;
+
+        &:hover{
+            border-bottom-color: #000 !important;
+            color: #000;
+        }
+    }
+
+    .NavItem {
+        color: white !important;
+        padding:0px;
+        line-height: 2;
+        margin: 20px 0px 0px 50px;
+
+        .Sign-btn {
+            background-color: white;
+            color: #1149B6;
+        }
+
+        &::before {
+            width: 0;
+        }
+    }
+    @include mq($from: mobile, $until: tablet){
+
+        .ui.container{
+            margin-left: 14px !important;
+        }
+    }
+   
+}

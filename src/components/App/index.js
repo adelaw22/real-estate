@@ -9,210 +9,146 @@ import Contact from "../Contact";
 import SignUpPage from "../SignUp";
 import SignInPage from "../SignIn";
 import PasswordForgetPage from "../PasswordForget";
-import HomePage from "../Home";
 import AccountPage from "../Account";
 import AdminPage from "../Admin";
 import PasswordChangePage from "../PasswordChange";
 import Error404 from "../Error404";
 import Pricing from "../Pricing"
-import LandlordPricing from "../LandlordPricing";
-import UnitGeneral from "../UnitAddGeneral";
-import UnitLocation from "../UnitAddLocation";
-import UnitDetails from "../UnitAddDetails";
-import UnitGallery from "../UnitAddGallery";
-import UnitCom from "../UnitAddCommercial";
-import BuyPage from "../BuyPage";
-import BuyPage2 from "../BuyPage2";
-import BuyPage3 from "../BuyPage3"
+import RentPage from "../RentPage";
+import PropertyOne from "../PropertyOne";
+import ForRent from "../ForRent";
+import ForSale from "../ForSale";
+import PropertiesTwo from "../PropertiesTwo";
+import ProfileDetails from "../ProfileDetails";
 
 import * as ROUTES from "../../constants/routes";
 
 import {
   withAuthentication
 } from "../Session";
-import {
-  SingleUnit
-} from "../SingleUnit";
+
 
 const App = () => {
-  return ( <
-    Router >
-    <
-    div style = {
-      {
-        height: 100 + "%"
-      }
-    } >
-    <
-    Switch >
-    <
-    Route exact path = {
-      ROUTES.LANDING
-    }
-    component = {
-      LandingPage
-    }
-    />{" "} <
-    Route path = {
-      ROUTES.CONTACT
-    }
-    component = {
-      Contact
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.SIGN_UP
-    }
-    component = {
-      SignUpPage
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.LANDLORD
-    }
-    component = {
-      LandlordPricing
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.SIGN_IN
-    }
-    component = {
-      SignInPage
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.PASSWORD_FORGET
-    }
-    component = {
-      PasswordForgetPage
-    }
-    exact /
-    >
-    <
-    Route path = {
-      ROUTES.PASSWORD_CHANGE
-    }
-    component = {
-      PasswordChangePage
-    }
-    /> <
-    Route path = {
-      ROUTES.HOME
-    }
-    component = {
-      HomePage
-    }
-    />{" "} <
-    Route path = {
-      ROUTES.ACCOUNT
-    }
-    component = {
-      AccountPage
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.SINGLEUNIT
-    }
-    component = {
-      SingleUnit
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.BUYPAGE
-    }
-    component = {
-      BuyPage
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.BUYPAGE2
-    }
-    component = {
-      BuyPage2
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.BUYPAGE3
-    }
-    component = {
-      BuyPage3
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.PRICING
-    }
-    component = {
-      Pricing
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.UNITGENERAL
-    }
-    component = {
-      UnitGeneral
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.UNITGALLERY
-    }
-    component = {
-      UnitGallery
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.UNITLOCATION
-    }
-    component = {
-      UnitLocation
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.UNITDETAILS
-    }
-    component = {
-      UnitDetails
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.UNITCOM
-    }
-    component = {
-      UnitCom
-    }
-    exact / >
-    <
-    Route path = {
-      ROUTES.ADMIN
-    }
-    component = {
-      AdminPage
-    }
-    exact / >
-    <
-    Route component = {
-      Error404
-    }
-    />{" "} < /
-    Switch > {
-      " "
-    } <
-    /div>{" "} < /
-    Router >
+  return (
+    <Router>
+      <div style={
+        {
+          height: 100 + "%"
+        }
+      }>
+        <Switch>
+          <Route exact path={
+            ROUTES.LANDING
+          }
+            component={
+              LandingPage
+            } />{" "}
+          <Route path={
+            ROUTES.CONTACT
+          }
+            component={
+              Contact
+            }
+            exact />
+          <Route path={
+            ROUTES.SIGN_UP
+          }
+            component={
+              SignUpPage
+            }
+            exact />
+          <Route path={
+            ROUTES.SIGN_IN
+          }
+            component={
+              SignInPage
+            }
+            exact />
+          <Route path={
+            ROUTES.PASSWORD_FORGET
+          }
+            component={
+              PasswordForgetPage
+            }
+            exact />
+          <Route path={
+            ROUTES.PASSWORD_CHANGE
+          }
+            component={
+              PasswordChangePage
+            } />
+          <Route path={
+            ROUTES.ACCOUNT
+          }
+            component={
+              AccountPage
+            }
+            exact />
+          
+          <Route path={
+            ROUTES.RENTPAGE
+          }
+            component={
+              RentPage
+            }
+            exact />
+          <Route path={
+            ROUTES.PROPERTIESONE
+          }
+            component={
+              PropertyOne
+            }
+            exact />
+          <Route path={
+            ROUTES.PROPERTIESTWO
+          }
+            component={
+              PropertiesTwo
+            }
+            exact />
+          <Route path={
+            ROUTES.FORRENT
+          }
+            component={
+              ForRent
+            }
+            exact />
+          <Route path={
+            ROUTES.FORSALE
+          }
+            component={
+              ForSale
+            }
+            exact />
+          <Route path={
+            ROUTES.PRICING
+          }
+            component={
+              Pricing
+            }
+            exact />
+
+          <Route path={
+            ROUTES.PROFILE
+          }
+            component={
+              ProfileDetails
+            }
+            exact />
+          <Route path={
+            ROUTES.ADMIN
+          }
+            component={
+              AdminPage
+            }
+            exact />
+          <Route component={
+            Error404
+          } />{" "}
+        </Switch > {
+          " "
+        } </div>{" "}
+    </Router >
   );
 };
 

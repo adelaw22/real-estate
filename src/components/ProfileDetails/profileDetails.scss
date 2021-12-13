@@ -1,0 +1,153 @@
+@import "~sass-mq";
+
+$mq-breakpoints: (mobile: 320px,
+  tablet: 768px,
+  desktop: 980px,
+  wide: 1300px,
+  // Tweakpoints
+  desktopAd: 810px,
+  mobileLandscape: 480px);
+
+.Details {
+  width: 100%;
+  height: auto;
+  padding-bottom: 60px;
+
+  .ui.header {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .profileSection {
+    width: 50%;
+    height: auto;
+    margin: 30px auto;
+
+    .ui.tabular.menu {
+      height: 50px;
+      border: none;
+    }
+
+    .ui.tabular.menu .active.item {
+      background-color: #efefef !important;
+    }
+
+    .ui.tabular.menu .item {
+      width: 50%;
+      justify-content: center;
+      border-radius: 13px 13px 0px 0px !important;
+      border: none;
+    }
+
+    .ui.segment {
+      height: auto;
+      border-radius: 0px 0px 10px 10px;
+      border: none;
+      background-color: #efefef;
+      padding: 50px 0px 50px 0px;
+
+      .profile-section {
+        width: 60%;
+        margin: auto;
+        .profileImg {
+          width: 80%;
+          text-align: center;
+          margin: 0px auto 16px auto;
+          .ui.image {
+            margin: 0px auto 10px auto;
+          }
+          p {
+            font-weight: 600;
+          }
+        }
+
+        .ui.form input {
+          border: none;
+
+          &::placeholder {
+            color: rgb(85, 85, 85);
+          }
+        }
+
+        .ui.button {
+          margin-top: 26px;
+         
+        }
+      }
+
+      .paymentForm {
+        width: 50%;
+        margin: auto;
+        padding-top: 30px;
+
+        .cardImages {
+          width: 60%;
+          margin: auto;
+          display: flex;
+
+          .ui.image {
+            margin: 14px;
+          }
+        }
+
+        .ui.form {
+          margin-top: 18px;
+        }
+
+        .ui.form input {
+          border: none;
+
+          &::placeholder {
+            color: rgb(85, 85, 85);
+          }
+        }
+
+        .Or-sec {
+          display: flex;
+          margin: 10px auto;
+          width: 80%;
+
+          p {
+            line-height: 2;
+            margin: auto 16px;
+          }
+
+          .ui.divider {
+            width: 40%;
+            border-top: 1px solid black !important;
+          }
+        }
+
+        .ui.button.saveBtn {
+          margin-top: 26px;
+        }
+        i.icon{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  @include mq($from: mobile, $until: tablet){
+
+      .profileSection{
+        width: 85%;
+        margin:auto;
+      }
+
+      .profile-section{
+        width:80% !important;
+      }
+
+      .paymentForm{
+        width: 80% !important ;
+        padding-top:0px !important;
+        .cardImages{
+          width: 80% !important;
+        }
+      }
+      .date_input{
+        margin-bottom:14px !important;
+      }
+  }
+}

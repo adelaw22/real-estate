@@ -1,4 +1,7 @@
 {
     "editor.formatOnSave": true,
-    "files.autoSave": "onFocusChange"
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 700,
+    "eslint.autoFixOnSave": true,
+    "editor.fontSize": 11,
 }

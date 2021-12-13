@@ -1,7 +1,6 @@
 //Pricing page for the landlords 
 
 import React from 'react';
-import NavBar2 from "../Navbar2";
 import "./landlordPricing.scss";
 import {
     Header,
@@ -18,7 +17,6 @@ import priceTag1 from "../images/price-tag2.png";
 const landlordPricing = () => {
     return (
         <div className="pricePage">
-            <NavBar2/>
             <div className='priceSec'>
         <Container>
           <Header className='top-header'>Pricing</Header>

@@ -16,14 +16,15 @@ const SideBarDrawer = props => {
       onStateChange={isMenuOpen}
       customBurgerIcon={false}
       pageWrapId={'page-wrap'}
-      left
+      right
       width={280}
       isOpen={props.sideBarOpen}
     >
       <Link id='home' className='menu-item' to={ROUTES.LANDING}>
         Home
       </Link>
-      <Link id='homes' className='menu-item' to={ROUTES.HOME}>
+      <Link id='homes' className='menu-item' to={ROUTES.RENTPAGE
+      }>
         Homes
       </Link>
       <Link id='sign-in' className='menu-item' to={ROUTES.SIGN_IN}>

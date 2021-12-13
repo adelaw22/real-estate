@@ -17,12 +17,43 @@ $mq-breakpoints: (mobile: 320px,
     display: grid !important;
     place-content: center;
 
-    form {
+    .ui.header {
+        color: #1149B6;
+    }
 
+    .ui.divider {
+        margin: 24px auto;
+        width: 80%;
+        border-top: 1px solid #1149B6 !important;
+    }
 
-        .mt-5 {
-            margin-top: 10px;
+    .ui.form {
+        input {
+            border: 1px solid #1149B6;
+            margin: 5px 0px;
+
+            &::placeholder {
+                color: #1149B6;
+            }
         }
+
+        .ui.checkbox {
+            margin: 14px 0px;
+        }
+
+        .Or-sec {
+            display: flex;
+
+            p {
+                margin: 14px 0px 0px 0px;
+            }
+
+            .ui.divider {
+                width: 30%;
+                border-top: 1px solid black !important;
+            }
+        }
+
     }
 }
 

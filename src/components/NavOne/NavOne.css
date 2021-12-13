@@ -1,0 +1,40 @@
+.centered-icon {
+  padding: 0.75em;
+}
+
+.ui.secondary.pointing.menu {
+  padding: 0px;
+  margin: 0px;
+  height: 70px;
+  background: transparent;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border: none !important;
+}
+
+.ui.secondary.pointing.menu .active.item {
+  background-color: transparent !important;
+  border-bottom-color: #000;
+}
+
+.ui.secondary.pointing.menu .active.item:hover {
+  border-bottom-color: #000 !important;
+  color: #000;
+}
+
+.ui.secondary.pointing.menu .NavItem {
+  color: white !important;
+  padding: 0px;
+  line-height: 2;
+  margin: 20px 0px 0px 50px;
+}
+
+.ui.secondary.pointing.menu .NavItem .Sign-btn {
+  background-color: white;
+  color: #1149B6;
+}
+
+.ui.secondary.pointing.menu .NavItem::before {
+  width: 0;
+}
+/*# sourceMappingURL=NavOne.css.map */

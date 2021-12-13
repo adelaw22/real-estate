@@ -1,0 +1,401 @@
+@import "~sass-mq";
+
+$mq-breakpoints: (mobile: 320px,
+    tablet: 768px,
+    desktop: 980px,
+    wide: 1300px,
+    // Tweakpoints
+    desktopAd: 810px,
+    mobileLandscape: 480px);
+
+.Details-page {
+    width: 100%;
+    height: auto;
+    padding-bottom: 100px;
+
+    .ui.container {
+        .ui.grid {
+            width: 100%;
+            display: flex !important;
+            margin-left: 0px;
+
+            .propertyFeatures {
+                width: 100%;
+                padding-top: 35px;
+                height: 150px;
+                display: flex;
+
+                .propertyAddress {
+                    width: 60%;
+                    .ui.header{
+                        color: #000;
+                        font-size:26px;
+                        font-weight:500;
+                        margin-bottom: 4px;
+                    }
+
+                    p {
+                        font-size: 18px;
+                        color: rgb(180, 181, 184);
+                        margin-bottom: 10px;
+                    }
+
+                    .image-Details{
+                        text-align: left;
+                        display: flex;
+                        margin:18px 0px;
+                        span{
+                          display: inline-flex;
+                          margin-right: 10px;
+                          i{
+                            font-size: 20px;
+                            font-weight: 600;
+                            color: rgb(180, 181, 184);
+                            margin-right:5px; 
+                          }
+                          p{
+                            color: rgb(180, 181, 184);
+                            font-size: 16px;
+                          }
+                        }
+                      }
+                }
+
+                .priceFeatures {
+                    width: 30%;
+                    .ui.header{
+                        color: #000;
+                        font-size:26px;
+                        font-weight:500;
+                        margin-bottom: 4px;
+                    }
+
+                    p {
+                        font-size: 18px;
+                        color: rgb(180, 181, 184);
+                    }
+                }
+            }
+
+            .v-line{
+                width: 96%;
+                margin: 14px 0;
+                border-top: 1px solid rgb(180, 181, 184) !important ;
+            }
+
+            .Facilities {
+                width: 100%;
+                height: auto;
+                
+
+                .BoxOne {
+                    border: 1px solid #000;
+                    padding: 14px;
+                    width: 70%;
+                    margin-bottom: 10px;
+                    text-align: center;
+                    border-radius: 10px;
+
+                    p {
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .features{
+                .gray-text{
+                    color:rgb(180, 181, 184) ;
+                    margin-bottom: 8px;
+                }
+                span{
+                    display: flex;
+                    margin-bottom: 24px;
+                    i{
+                        margin-right:10px;
+                        font-size: 20px;
+                    }
+                }
+                .safety{
+                    background: rgb(6, 204, 6);
+                    width: 60%;
+                    border-radius: 8px;
+                    color: white;
+                    text-align: center;
+                    border: none;
+                }
+            }
+
+
+
+            .AgentProfile {
+                width: 95%;
+                height: 338px;
+                text-align: center;
+                border:1px solid #e0e0e0de;
+                margin: auto;
+                padding-top: 20px;
+                border-radius: 10px;
+                padding-bottom: 30px;
+
+                .profilePicture {
+                    width: 100px;
+                    height: 100px;
+                    margin: 0 auto;
+                }
+                .ui.header {
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    color: #000;
+                }
+
+                .ui.button {
+                    margin: 110px auto 20px;
+                    font-weight: 500;
+                    padding: 15px 64px;
+                    border-radius: 8px;
+                }
+            }
+
+            .Map-sec {
+                height: 400px;
+                width: 95%;
+                position: relative;
+                margin: auto;
+                border-radius: 10px;
+            }
+        }
+        
+        .local-info{
+            font-size: 25px;
+            color: #1149b6;
+            margin-bottom: 48px;
+        }
+        
+        .local-navBar{
+            .item{
+                font-size: 18px;
+                color:rgb(180, 181, 184) ;
+                i{
+                    font-size: 40px;
+                    margin-bottom: 4px;
+                    // color:rgb(180, 181, 184) ;
+                }
+            }
+        }
+
+        .biggerMap {
+            width: 100%;
+            height: 500px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+    }
+    
+    .Amenities{
+        margin:60px 0px 30px 0px;
+        .ui.header{
+           font-size: 25px;
+           color: #1149b6;
+           margin-bottom: 36px;
+        }
+        .amenities-item{
+            display:flex;
+            width: 100%;
+            .item-col{
+               width:30%;
+               span{
+                   margin:12px 0px;
+                   display: flex;
+                   
+                   i{
+                       font-size: 12px;
+                       margin-right: 10px;
+                       line-height: 2.25;
+                       color: #474747;
+                    }
+                    p{
+                        font-size:  18px;
+                        color: #474747;
+                    }
+               }
+            }
+        }
+    }
+   
+    
+    .property-description{
+        margin-top:50px;
+        .ui.header{
+            font-size: 25px;
+           color: #1149b6;
+           margin-bottom: 36px;
+        }
+        p{
+            font-size:18px;
+            line-height: 2;
+            letter-spacing: 1px;
+            color: #474747;
+        }
+    }
+
+    .similarHomes {
+        width: 100%;
+        height: auto;
+        margin-top:50px;
+
+        .topHeader {
+            width: 100%;
+            height: auto;
+
+            .ui.header {
+                line-height: 2em;
+                font-size: 25px;
+                color: #1149b6;
+            }
+        }
+
+        .ui.grid {
+            width: 100%;
+            margin: 36px 0px 30px 0px;
+            display: flex !important;
+        
+            .cardLike {
+              width: 100%;
+              height: 380px;
+              margin: auto;
+              border-radius: 16px;
+              padding: 14px;
+              background-color: #e6f0f5;
+              box-shadow: 0 1.8px 2.2px rgba(0, 0, 0, 0.034), 0 9.7px 10.3px rgba(0, 0, 0, 0.048), 0 11.5px 16px rgba(0, 0, 0, 0.06), 0 33.3px 27.9px rgba(0, 0, 0, 0.072), 0 11.8px 9.4px rgba(0, 0, 0, 0.086), 0 1px 0px rgba(0, 0, 0, 0.12);
+              .ui.image{
+                border-radius: 14px;
+              }
+              .propertyDetails {
+                width: 100%;
+                height: 175px;
+                padding: 20px 0px 0px 0px;
+        
+                .text-Details {
+                  width: 100%;
+                  height: auto;
+                  text-align: left;
+                  padding-left: 5px;
+                  
+                  p{
+                    font-size: 18px;
+                    margin-bottom: 1px;
+                  }
+                  .PropertyName {
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-bottom: 12px;
+                  }
+                }
+                
+                .detailed-line{
+                   width: 100%;
+                   margin: 15px auto;
+                   border-top: 1px solid rgb(180, 181, 184) !important;
+                }
+                
+                .image-Details{
+                  text-align: left;
+                  margin-left: 5px;
+                  display: flex;
+                  span{
+                    display: inline-flex;
+                    margin-right: 10px;
+                    i{
+                      font-size: 18px;
+                      font-weight: 600;
+                      color: rgb(180, 181, 184);
+                      margin-right:5px; 
+                    }
+                    p{
+                      color: rgb(180, 181, 184);
+                      font-weight: 600;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .moreLink {
+            width: 85%;
+            margin: auto;
+            text-align: center;
+         
+            .linkBtn{
+              color:#000;
+              font-size:18px;
+              border:1px solid #000;
+              background-color: transparent;
+              border-radius: 11px;
+            }
+          }
+
+    }
+
+    // @include mq($from: mobile, $until: tablet) {
+
+    //     .ui.container {
+    //         .ui.grid {
+    //             width: 95% !important;
+    //             margin: auto;
+
+    //             .propertyFeatures {
+    //                 .priceFeatures {
+    //                     width: 25%;
+    //                 }
+    //             }
+
+    //             .Facilities {
+    //                 .BoxOne {
+    //                     .BoxTwo {
+    //                         padding: 6px 30px;
+    //                     }
+
+    //                     p {
+    //                         font-size: 12px;
+    //                     }
+    //                 }
+    //             }
+
+    //             .AgentProfile {
+    //                 width: 100%;
+    //             }
+
+    //             .Map-sec {
+    //                 width: 100%;
+    //             }
+    //         }
+
+    //         .second-navBar {
+    //             display: none;
+    //         }
+
+    //     }
+
+    //     .similarHomes {
+    //         .topHeader {
+    //             padding: 0px 16px;
+
+    //             .ui.header {
+    //                 font-size: 18px;
+    //             }
+
+    //             .ui.button {
+    //                 font-size: 14px;
+    //             }
+    //         }
+
+    //         .ui.grid {
+    //             .cardLike {
+    //                 width: 85%;
+    //             }
+    //         }
+    //     }
+    // }
+}

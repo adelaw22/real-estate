@@ -3,24 +3,26 @@ import React, { useState } from "react";
 import { Link, withRouter } from 'react-router-dom';
 import * as ROUTES from "../../constants/routes";
 import * as ROLES from "../../constants/roles";
+import NavFour from "../NavFour";
 // Organizes  higher-order components in this case it will handle withRouter and withFirebas for Sign up form.
 import { compose } from 'recompose'
 import "./SignUp.scss";
 import { withFireBase } from "../Firebase";
 import { useForm  } from "react-hook-form";
+import GImage from "../images/google (3).png";
 import { 
     Header,
     Container, 
     Form, 
     Button,
     Divider,
-    Icon,
     Message,
     Grid,
     Checkbox,
-    Popup,
+    Image
+   // Checkbox,
+   // Popup,
  } from 'semantic-ui-react';
- import Navigation from "../Navigation";
  import SideBarDrawer from "../Sidebar";
 
 
@@ -44,13 +46,10 @@ const SignUpPage = () => {
                  sideBarOpen
              }
              />
-              <Navigation click = {
-                 setsideBarOpen
-             }
-             />
+            <NavFour/>
             <Container>
             <Grid columns={1} centered>
-                <Grid.Column mobile={16} tablet={8} largeScreen={6} computer={6} style={{marginTop:'28px'}}>
+                <Grid.Column mobile={16} tablet={8} largeScreen={5} computer={5} style={{marginTop:'28px'}}>
 
                     <Header as='h3' textAlign='center'>
                         Sign Up
@@ -76,7 +75,7 @@ const SignUpLink = (props) => {
                      </p>
 
                      <p>
-                     Don't have an account? <Link to={props.to}>{props.name}</Link>
+                     Already have an account? <Link to={props.to}>{props.name}</Link>
                      </p>
                     
             </div>
@@ -87,9 +86,8 @@ const SignUpLink = (props) => {
         
 
              <p>
-             Don't have an account? <Link to={props.to}>{props.name}</Link>
+             Already have an account? <Link to={props.to}>{props.name}</Link>
              </p>
-             <p>By Signing up you agree to our <span className="link-primary">Terms and Conditions</span></p>
             </div>
         )
     }
@@ -111,7 +109,8 @@ const FormSign = props => {
 
     const [error, setError] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [role, setRole] = useState('Regular');
+    const [role] = useState('Regular');
+
     
     const [ setConfirm] = useState(false);
 
@@ -147,7 +146,7 @@ const FormSign = props => {
             })
             .then(() => {
                 setForm({ email: "", passwordOne: "", passwordTwo: "", role: ROLES.client, username: "" })
-                props.history.push(ROUTES.HOME);
+                props.history.push(ROUTES.RENTPAGE);
             })
             .catch(error => {
                 console.log("error su", error);
@@ -174,30 +173,29 @@ const FormSign = props => {
 
             <Form onSubmit={handleSubmit(submit)}>
                     <Form.Field required>
-                        <label>Username</label>
                         <input 
                         name='username'
-                        placeholder='Username'
+                        placeholder='Fullname'
                         width={8}
-                        value={form.username}
+                        value={form.Fullname}
                         onChange={onChange}
                         ref={
                             register({
                                 required: 'Required',
                                 maxLength: {
                                     value: 20,
-                                    message: "Username requires a maximum of 20 characters."
+                                    message: "Fullname requires a maximum of 20 characters."
                                 },
                                 minLength: {
                                     value: 3,
-                                    message: "Username requires a minimum of 3 characters."
+                                    message: "Fullname requires a minimum of 3 characters."
                                 },
                             })
                         }
                         type="text" />
                     { errors.username && <small className="danger">{ errors.username.message }</small> }
                     </Form.Field>
-                    <Grid className="p-2" columns={1}>
+                   {/* <Grid className="p-2" columns={1}>
                         <Grid.Row columns={3}>
                             <Grid.Column>
                                 <Popup
@@ -261,10 +259,9 @@ const FormSign = props => {
                             </Grid.Column>
                             
                         </Grid.Row>
-                    </Grid>
+                                </Grid>*/}
                     
                     <Form.Field required>
-                        <label>Email</label>
                         <input 
                         name='email'
                     
@@ -285,7 +282,6 @@ const FormSign = props => {
                     { errors.email && <small className="danger">{ errors.email.message }</small> }
                     </Form.Field>
                     <Form.Field required>
-                        <label>Password</label>
                         <input 
                         name='passwordOne'
                         
@@ -305,7 +301,6 @@ const FormSign = props => {
                     { errors.passwordOne && <small className="danger">{ errors.passwordOne.message }</small> }
                     </Form.Field>
                     <Form.Field required>
-                        <label>Confirm Password</label>
                         <input 
                         name='passwordTwo'
                         placeholder='Confirm your Password'
@@ -322,8 +317,11 @@ const FormSign = props => {
                         { errors.passwordTwo && <small className="danger">{ errors.passwordTwo.message }</small> }
                     </Form.Field>
 
+                    <Checkbox label='I agree to the Terms & Conditions'/>
+
                 <Button loading={loading} fluid primary role="submit">Sign Up</Button>
-                <Button fluid color="red" className="mt-5"><Icon name="google"/> Sign Up with Google </Button>
+                <span className="Or-sec"><Divider/><p>or</p><Divider/></span>
+                <Button fluid color="gray"> Sign Up with Google <Image src={GImage} style={{display:'inline-flex',marginLeft:'5px'}}/> </Button>
             </Form>
         </div>
     )

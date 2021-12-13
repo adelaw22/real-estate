@@ -4,7 +4,7 @@ import React, {
 import {
   withFireBase
 } from "../Firebase";
-
+import NavFour from "../NavFour";
 import {
   Container,
   Form,
@@ -33,7 +33,6 @@ import {
   Link
 } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
-import Navigation from "../Navigation";
 import SideBarDrawer from "../Sidebar";
 
 const SignInPage = () => {
@@ -47,69 +46,58 @@ const SignInPage = () => {
   // }, [input])
 
   console.log("sidebar", sideBarOpen);
-  return ( <
-    div >
-    <
-    SideBarDrawer openSideBar = {
-      setsideBarOpen
-    }
-    sideBarOpen = {
-      sideBarOpen
-    }
-    /> <
-    Navigation click = {
-      setsideBarOpen
-    }
-    />
-
-    <
-    Container >
-    <
-    Grid columns = {
-      1
-    }
-    centered >
-    <
-    Grid.Column mobile = {
-      16
-    }
-    tablet = {
-      8
-    }
-    largeScreen = {
-      6
-    }
-    computer = {
-      6
-    }
-    style = {
-      {
-        marginTop: "28px"
+  return (
+    <div >
+      <SideBarDrawer openSideBar={
+        setsideBarOpen
       }
-    } >
-    <
-    Header as = 'h3'
-    textAlign = 'center' >
-    Sign In <
-    /Header> <
-    Divider / >
-    <
-    SignInForm / >
-    <
-    SignUpLink login = {
-      true
-    }
-    to = {
-      ROUTES.SIGN_UP
-    }
-    name = {
-      "Sign Up"
-    }
-    /> < /
-    Grid.Column > <
-    /Grid> < /
-    Container > <
-    /div>
+        sideBarOpen={
+          sideBarOpen
+        }
+      />
+      <NavFour/>
+   
+      <Container >
+        <Grid columns={
+          1
+        }
+          centered >
+          <Grid.Column mobile={
+            16
+          }
+            tablet={
+              8
+            }
+            largeScreen={
+              5
+            }
+            computer={
+              5
+            }
+            style={
+              {
+                marginTop: "28px"
+              }
+            } >
+            <Header as='h3'
+              textAlign='center' >
+              Sign In </Header>
+            <Divider />
+            <SignInForm />
+            <SignUpLink login={
+              true
+            }
+              to={
+                ROUTES.SIGN_UP
+              }
+              name={
+                "Sign Up"
+              }
+            />
+          </Grid.Column >
+        </Grid>
+      </Container >
+    </div>
   );
 };
 
@@ -170,101 +158,91 @@ const SignInFormBase = props => {
     });
   };
 
-  return ( <
-      div > {
-        error.length > 0 ? ( <
-          Message error header = 'Sorry Login failed'
-          content = {
+  return (
+    <div>
+      {
+        error.length > 0 ? (<
+          Message error header='Sorry Login failed'
+          content={
             error
           }
-          />
+        />
         ) : (
-          ""
-        )
-      } <
-      Form onSubmit = {
+            ""
+          )
+      }
+      <Form onSubmit={
         handleSubmit(onSubmit)
       } >
-      <
-      Form.Field required >
-      <
-      label > Email < /label> <
-      input name = 'email'
-      onChange = {
-        onChange
-      }
-      value = {
-        loginDetail.email
-      }
-      width = {
-        8
-      }
-      ref = {
-        register({
-          required: "Please enter an email",
-          pattern: {
-            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-            message: "A valid email is required"
+        <Form.Field required >
+          <input name='email'
+            onChange={
+              onChange
+            }
+            value={
+              loginDetail.email
+            }
+            width={
+              8
+            }
+            ref={
+              register({
+                required: "Please enter an email",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                  message: "A valid email is required"
+                }
+              })
+            }
+            type='email'
+            placeholder='Email' />
+          {
+            errors.email && (<small className='text-danger' > {
+              errors.email.message
+            } </small>
+            )
           }
-        })
-      }
-      type = 'email'
-      placeholder = 'Email' /
-      >
-      {
-        errors.email && ( <
-          small className = 'text-danger' > {
-            errors.email.message
-          } < /small>
-        )
-      } <
-      /Form.Field> <
-      Form.Field required >
-      <
-      label > Password < /label> <
-      input name = 'password'
-      onChange = {
-        onChange
-      }
-      value = {
-        loginDetail.password
-      }
-      type = 'password'
-      width = {
-        8
-      }
-      placeholder = 'Password'
-      ref = {
-        register({
-          required: "Please enter your password",
-          minLength: 3
-        })
-      }
-      />{" "} {
-      errors.password && ( <
-        small className = 'text-danger' > {
-          errors.password.message
-        } < /small>
-      )
-    } <
-    /Form.Field> <
-  Button loading = {
-    loading
-  }
-  type = 'submit'
-  fluid primary as = {
-    Link
-  }
-  to = {
-      ROUTES.BUYPAGE
-    } >
-    Sign In <
-    /Button> <
-  SignInGoogleBase / >
-    <
-    /Form> < /
-  div >
-);
+        </Form.Field>
+        <Form.Field required >
+          <input name='password'
+            onChange={
+              onChange
+            }
+            value={
+              loginDetail.password
+            }
+            type='password'
+            width={
+              8
+            }
+            placeholder='Password'
+            ref={
+              register({
+                required: "Please enter your password",
+                minLength: 3
+              })
+            }
+          />{" "} {
+            errors.password && (<small className='text-danger' > {
+              errors.password.message
+            } </small>
+            )
+          } </Form.Field>
+        <Button loading={
+          loading
+        }
+          type='submit'
+          fluid primary as={
+            Link
+          }
+          to={
+            ROUTES.RENTPAGE
+          }>Sign In </Button>
+        <span className="Or-sec"><Divider /><p>or</p><Divider /></span>
+        <SignInGoogleBase />
+      </Form>
+    </div>
+  );
 };
 
 const SignInForm = compose(withRouter, withFireBase)(SignInFormBase);

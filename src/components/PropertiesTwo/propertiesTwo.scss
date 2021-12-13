@@ -1,0 +1,156 @@
+@import "~sass-mq";
+
+$mq-breakpoints: (
+  mobile: 320px,
+  tablet: 768px,
+  desktop: 980px,
+  wide: 1300px,
+  // Tweakpoints
+    desktopAd: 810px,
+  mobileLandscape: 480px
+);
+
+.propertyFilter{
+    width:100%;
+    height:auto;
+
+    .ui.secondary.pointing.menu {
+     border: none !important;
+  }
+    
+        .filterBtns{
+            width:100%;
+            border-bottom: 1px solid #aaa;
+            .ui.container{
+                height: auto;
+                .ui.button{
+                    font-size: 14px;
+                    border-radius: 9px;
+                    font-weight: 500;
+                    padding: 11px 16px;
+                    background-color: transparent;
+                    border:1px solid #000;
+                    margin:10px 10px 15px 0px;
+                }
+            }
+        }
+
+        .ui.container{
+            height:auto;
+            .topSection{
+                width: 100%;
+                height:40px;
+                margin:20px 0px;
+
+                .ui.header{
+                    width:30%;
+                    margin:8px 0px;
+                    float: left;
+                }
+                .rec-btn{
+                    width:56%;
+                    float: right;
+                    .ui.button{
+                        font-size: 14px;
+                        border-radius: 9px;
+                        font-weight: 500;
+                        padding: 11px 16px;
+                        background-color: transparent;
+                        border:1px solid #000;
+                    }
+
+                    .leftBtn{
+                      font-size: 14px;
+                        border-radius: 9px;
+                        font-weight: 500;
+                        padding: 11px 16px;
+                        background-color: transparent;
+                        border:1px solid #000;
+                    }
+                    .hide-btn{
+                        float: right;
+                    }
+                }
+            }
+
+            .prop-location{
+                width: 100%;
+                height: auto;
+                display: inline-flex;
+
+                    .ui.grid {
+                        width: 60%;
+                        margin: 36px 0px 30px 0px;
+                        display: flex !important;
+                    
+                        .cardLike {
+                          width: 96%;
+                          height: 350px;
+                          margin: auto;
+                          border-radius: 16px;
+                          .ui.image{
+                            border-radius: 14px;
+                          }
+                          .propertyDetails {
+                            width: 100%;
+                            height: 150px;
+                            padding: 20px 0px 0px 0px;
+                    
+                            .text-Details {
+                              width: 100%;
+                              height: auto;
+                              text-align: left;
+                              padding-left: 5px;
+                              
+                              p{
+                                font-size: 18px;
+                                margin-bottom: 1px;
+                              }
+                              .PropertyName {
+                                font-size: 18px;
+                                font-weight: 600;
+                                margin-bottom: 12px;
+                              }
+                            }
+                            
+                            .detailed-line{
+                               width: 100%;
+                               margin: 15px auto;
+                               border-top: 1px solid rgb(180, 181, 184) !important;
+                            }
+                            
+                            .image-Details{
+                              text-align: left;
+                              margin-left: 5px;
+                              display: flex;
+                              span{
+                                display: inline-flex;
+                                margin-right: 10px;
+                                i{
+                                  font-size: 18px;
+                                  font-weight: 600;
+                                  color: rgb(180, 181, 184);
+                                  margin-right:5px; 
+                                }
+                                p{
+                                  color: rgb(180, 181, 184);
+                                  font-weight: 600;
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                }
+                .displayedMap{
+                    width: 50%;
+                    height:730px;
+                    position: relative;
+                    border-radius: 10px;
+                    margin-top:50px;
+                    border: 2px solid #1149b6;
+                }
+            }
+        
+    
+}

@@ -6,21 +6,20 @@ import {
   Button,
   Grid,
   Image,
-  Divider,
   Responsive
 } from "semantic-ui-react";
 import "./landing.scss";
-import Navigation from "../Navigation";
 import SideBarDrawer from "../Sidebar";
 import Media from "../images/Media.png";
-import Media2 from "../images/Media (1).png";
+import Media2 from "../images/Media 1.png";
 import logo from "../images/Logo 01.png";
-import vector1 from "../images/Group 308.png";
-import vector2 from "../images/Group 307.png";
-import vector3 from "../images/Group 306.png";
+import vector1 from "../images/Group 526.png";
+import vector2 from "../images/lock 1.png";
+import vector3 from "../images/Group 531.png";
 import Avatar from "../images/Media Person.png";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
+import NavOne from "../NavOne";
 
 const LandingPage = () => {
   const [sideBarOpen, setsideBarOpen] = useState(false);
@@ -36,10 +35,9 @@ const LandingPage = () => {
 
   return (
     <div className='landingPage'>
-      <SideBarDrawer openSideBar={setsideBarOpen} sideBarOpen={sideBarOpen} />
-      <Navigation click={setsideBarOpen} />
-
       <div className='firstSec'>
+         <SideBarDrawer openSideBar={setsideBarOpen} sideBarOpen={sideBarOpen} />
+      <NavOne click={setsideBarOpen} />
         <Container>
           <div className='Section-content'>
             <Header style={{ color: "white" }}>BUY, SELL AND RENT</Header>
@@ -52,114 +50,16 @@ const LandingPage = () => {
         </Container>
       </div>
 
-      <div className='secondSec'>
-        <Responsive minWidth={768}>
-          <Grid container columns={2}>
-            <Grid.Column style={{ marginTop: "1.875em" }}>
-              <div
-                className='inner-column'
-                style={{ width: "70%", paddingTop: "40px" }}
-              >
-                <Header style={{ color: "#1149b6" }}>
-                  Homes with a difference
-                </Header>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </Grid.Column>
-
-            <Grid.Column style={{ marginTop: "1.875em" }}>
-              <Image
-                style={{ margin: "1.25em auto", width: "70%" }}
-                src={Media}
-              />
-            </Grid.Column>
-          </Grid>
-        </Responsive>
-        <Responsive minWidth={320} maxWidth={767}>
-          <Grid container rows={2}>
-            <Grid.Row style={{ marginTop: "1.875em" }}>
-              <Image
-                style={{ margin: "1.25em auto", width: "50%" }}
-                src={Media}
-              />
-            </Grid.Row>
-            <Grid.Row style={{ marginTop: "1.875em" }}>
-              <div className='inner-column'>
-                <Header style={{ color: "#1149b6" }}>
-                  Homes with a difference
-                </Header>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </Grid.Row>
-          </Grid>
-        </Responsive>
-
-        <Responsive minWidth={768}>
-          <Grid container columns={2}>
-            <Grid.Column style={{ marginTop: "1.875em" }}>
-              <Image
-                style={{ margin: "1.25em auto", width: "70%" }}
-                src={Media2}
-              />
-            </Grid.Column>
-            <Grid.Column style={{ marginTop: "1.875em" }}>
-              <div
-                className='inner-column'
-                style={{ width: "70%", paddingTop: "40px" }}
-              >
-                <Header style={{ color: "#1149b6" }}>
-                  Homes with a difference
-                </Header>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </Grid.Column>
-          </Grid>
-        </Responsive>
-        <Responsive minWidth={320} maxWidth={767}>
-          <Grid container rows={2}>
-            <Grid.Row style={{ marginTop: "1.875em" }}>
-              <Image
-                style={{ margin: "1.25em auto", width: "50%" }}
-                src={Media2}
-              />
-            </Grid.Row>
-            <Grid.Row style={{ marginTop: "1.875em" }}>
-              <div className='inner-column'>
-                <Header style={{ color: "#1149b6" }}>
-                  Homes with a difference
-                </Header>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </Grid.Row>
-          </Grid>
-        </Responsive>
-      </div>
-
-      <div className='thirdSec'>
+      <div className="Details">
         <Container>
           <Header className='topHeader'>
             Buying a home doesn’t have to be a mystery..
           </Header>
-
-          <Divider section style={{ color: "color: #1149b6" }} />
-
           <Responsive minWidth={768}>
             <Grid container columns={3}>
               <Grid.Column
                 className='gridContent'
-                style={{ margin: "auto", width: "30%" }}
+                style={{ margin: "auto", width: "25%" }}
               >
                 <Image src={vector1} />
                 <Header>Easier</Header>
@@ -170,7 +70,7 @@ const LandingPage = () => {
 
               <Grid.Column
                 className='gridContent'
-                style={{ margin: "auto", width: "30%" }}
+                style={{ margin: "auto", width: "25%" }}
               >
                 <Image src={vector2} />
                 <Header>Secure</Header>
@@ -181,7 +81,7 @@ const LandingPage = () => {
 
               <Grid.Column
                 className='gridContent'
-                style={{ margin: "auto", width: "30%" }}
+                style={{ margin: "auto", width: "25%" }}
               >
                 <Image src={vector3} />
                 <Header>Details</Header>
@@ -221,7 +121,119 @@ const LandingPage = () => {
             </Grid>
           </Responsive>
         </Container>
+      </div>
+     
+      <div className='secondSec'>
 
+        <Responsive minWidth={768}>
+          <Grid>
+            < Grid.Column  style = {
+              {
+                backgroundColor: "#1149b6",
+                width: "60%",height:"300px"
+              }
+            }>
+              <div
+                className='inner-column'
+               
+              >
+                <Header style={{ color: "white" }}>
+                  Homes with a difference
+                </Header>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </Grid.Column>
+
+            <Grid.Column style={{ marginTop: "1.875em",width:"40%" }}>
+             <div className="img-description">
+                <Image
+                src={Media2}
+              />
+             </div>
+            </Grid.Column>
+          </Grid>
+        </Responsive>
+
+        <Responsive minWidth={320} maxWidth={767}>
+          <Grid container rows={2}>
+            <Grid.Row style={{ marginTop: "1.875em" }}>
+              <Image
+                style={{ margin: "1.25em auto" }}
+                src={Media}
+              />
+            </Grid.Row>
+            <Grid.Row>
+              <div className='inner-column'>
+                <Header>
+                  Homes with a difference
+                </Header>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </Grid.Row>
+          </Grid>
+        </Responsive>
+
+        <Responsive minWidth={768}>
+          <Grid>
+            <Grid.Column style={{ marginTop: "1.875em",width:"40%", zIndex:"1" }}>
+              <div className="img-frame">
+                <Image
+                src={Media}
+              />
+              </div>
+            </Grid.Column>
+
+            < Grid.Column style = {
+              {
+                backgroundColor: "#1149b6",
+                width: "60%",
+                height: "300px"
+              }
+            } >
+              <div
+                className='inner-column'
+              >
+                <Header style={{ color: "white" }}>
+                  Homes with a difference
+                </Header>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </Grid.Column>
+          </Grid>
+        </Responsive>
+        <Responsive minWidth={320} maxWidth={767}>
+          <Grid container rows={2}>
+            <Grid.Row style={{ marginTop: "1.875em" }}>
+              <Image
+                style={{ margin: "1.25em auto"}}
+                src={Media2}
+              />
+            </Grid.Row>
+            <Grid.Row>
+              <div className='inner-column'>
+                <Header>
+                  Homes with a difference
+                </Header>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </Grid.Row>
+          </Grid>
+        </Responsive>
+      </div>
+
+      <div className='thirdSec'>
         <div className='second-layer'>
           <div className='card-layer'>
             <div className='text-layer'>
@@ -285,7 +297,7 @@ const LandingPage = () => {
           Find your next client fast and easy by posting your new home and
           allowing clients find you
         </p>
-        <Button content='Secondary' as={Link} to={ROUTES.SIGN_UP}>Start free trial</Button>
+        <Button content='Secondary' as={Link} to={ROUTES.SIGN_UP}>Free Registration</Button>
       </div>
     </div>
   );
